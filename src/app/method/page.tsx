@@ -30,7 +30,7 @@ export default function MethodPage() {
         <EarnedAutonomy />
       </Container>
 
-      <section className="border-y border-line bg-surface py-14">
+      <section className="border-y border-line bg-white/[0.015] py-14">
         <Container>
           <SectionHeading eyebrow="Four layers" title="What gets installed" lead="Most providers sell only the Build layer. The other three are why AI sticks." />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

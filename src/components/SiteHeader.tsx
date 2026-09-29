@@ -4,11 +4,11 @@ import { ButtonLink, Container } from "./ui";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-surface/90 backdrop-blur">
-      <Container className="flex h-16 items-center gap-6">
-        <Link href="/" className="flex shrink-0 items-center gap-2 font-bold tracking-tight">
-          <span className="grid h-7 w-7 place-items-center rounded-md bg-navy text-[11px] font-bold text-white">
-            AI
+    <header className="sticky top-3 z-50 px-4 sm:px-6">
+      <div className="glass mx-auto flex h-16 max-w-6xl items-center gap-6 rounded-2xl px-5 shadow-2xl">
+        <Link href="/" className="flex shrink-0 items-center gap-2.5 font-bold tracking-tight">
+          <span className="orb-glow grid h-8 w-8 place-items-center rounded-full">
+            <span className="h-2.5 w-2.5 rounded-full bg-white/70" />
           </span>
           <span>{site.name}</span>
         </Link>
@@ -17,7 +17,7 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-md px-3 py-2 text-sm font-medium text-muted hover:bg-surface-2 hover:text-ink"
+              className="rounded-lg px-3 py-2 text-sm font-medium text-muted transition hover:bg-surface-2 hover:text-ink"
             >
               {item.label}
             </Link>
@@ -26,9 +26,9 @@ export function SiteHeader() {
         <div className="ml-auto hidden sm:block">
           <ButtonLink href={site.bookingUrl}>Book an Ops Call</ButtonLink>
         </div>
-      </Container>
+      </div>
       {/* Compact nav for small screens: horizontally scrollable row. */}
-      <nav aria-label="Main mobile" className="overflow-x-auto border-t border-line lg:hidden">
+      <nav aria-label="Main mobile" className="glass mx-auto mt-2 max-w-6xl overflow-x-auto rounded-2xl lg:hidden">
         <Container className="flex gap-1 py-2">
           {nav.map((item) => (
             <Link

@@ -40,7 +40,7 @@ export default function HubPage() {
         </div>
       </Container>
 
-      <section className="border-t border-line bg-surface py-14">
+      <section className="border-t border-line bg-white/[0.015] py-14">
         <Container>
           <SectionHeading eyebrow="Guides" title="Start here" />
           <div className="grid gap-4 md:grid-cols-3">

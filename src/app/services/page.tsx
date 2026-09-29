@@ -26,7 +26,7 @@ export default function ServicesPage() {
         <ol className="grid gap-4 md:grid-cols-3">
           {ladder.map((l) => (
             <li key={l.step} className="rounded-2xl border border-line bg-surface p-6">
-              <span className="grid h-8 w-8 place-items-center rounded-full bg-navy text-sm font-bold text-white">{l.step}</span>
+              <span className="grid h-8 w-8 place-items-center rounded-full border border-accent/50 bg-accent-soft text-sm font-bold text-accent">{l.step}</span>
               <h2 className="mt-3 font-bold">{l.name}</h2>
               <p className="mt-2 text-sm text-muted">{l.body}</p>
             </li>

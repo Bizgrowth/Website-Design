@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="border-b border-line bg-surface">
+      <section className="border-b border-line bg-white/[0.015]">
         <Container className="grid items-center gap-10 py-14 md:grid-cols-[320px_1fr]">
           <Reveal>
             <Portrait size={320} />

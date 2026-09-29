@@ -48,7 +48,7 @@ export default async function ServicePage(props: PageProps<"/services/[slug]">) 
         </div>
       </Container>
       {related.length > 0 && (
-        <section className="border-t border-line bg-surface py-14">
+        <section className="border-t border-line bg-white/[0.015] py-14">
           <Container>
             <SectionHeading eyebrow="Blueprints" title="Related reference builds" />
             <div className="grid gap-4 md:grid-cols-3">

@@ -1,7 +1,7 @@
 import { Reveal } from "@/components/interactive/Reveal";
 import { StackExplorer } from "@/components/interactive/StackExplorer";
 import { StackSteps } from "@/components/interactive/StackSteps";
-import { Container } from "@/components/ui";
+import { Container, Eyebrow } from "@/components/ui";
 import { getBlueprints } from "@/lib/content";
 import { categories, integrations } from "@/lib/integrations";
 
@@ -11,11 +11,11 @@ const iconOf = (name: string) => integrations.find((i) => i.name === name)!.icon
 export function ConnectedStack() {
   const blueprintTitles = Object.fromEntries(getBlueprints().map((b) => [b.slug, b.title]));
   return (
-    <section className="hero-backdrop bg-navy py-16 text-white sm:py-24">
+    <section className="hero-backdrop border-y border-line py-16 text-white sm:py-24">
       <Container>
         <Reveal>
-          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-hero-accent">Your tool stack, connected</p>
-          <h2 className="mt-2 max-w-3xl text-3xl font-bold sm:text-4xl">
+          <Eyebrow tone="flare">Your tool stack, connected</Eyebrow>
+          <h2 className="mt-4 max-w-3xl text-3xl font-bold sm:text-4xl">
             AI that works inside the tools you already pay for
           </h2>
           <p className="mt-3 max-w-2xl text-white/60">

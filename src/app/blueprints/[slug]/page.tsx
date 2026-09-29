@@ -20,7 +20,7 @@ export default async function BlueprintPage(props: PageProps<"/blueprints/[slug]
 
   return (
     <>
-      <header className="border-b border-line bg-surface">
+      <header className="hero-backdrop border-b border-line">
         <Container className="py-12 sm:py-16">
           <Link href="/blueprints" className="text-sm text-muted hover:text-ink">← All blueprints</Link>
           <div className="mt-5 flex flex-wrap gap-1.5">

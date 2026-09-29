@@ -31,14 +31,12 @@ export default function Home() {
   return (
     <>
       {/* 1 · Hero with a live workflow visual */}
-      <section className="hero-backdrop bg-navy text-white">
+      <section className="hero-backdrop text-white">
         <Container className="grid gap-12 py-16 sm:py-24 lg:grid-cols-[1.2fr_1fr] lg:items-center">
           <Reveal>
-            <p className="inline-flex rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-white/70">
-              The SMB hub for AI operations
-            </p>
-            <h1 className="mt-5 text-4xl font-bold leading-[1.1] sm:text-5xl xl:text-[3.4rem]">
-              AI that runs your operations — <span className="text-hero-accent">measured, controlled, and owned.</span>
+            <Eyebrow>The SMB hub for AI operations</Eyebrow>
+            <h1 className="mt-6 text-4xl font-extrabold tracking-tight leading-[1.1] sm:text-5xl xl:text-[3.4rem]">
+              AI that runs your operations — <span className="text-flare-gradient">measured, controlled, and owned.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg text-white/70">
               Blueprints, daily updates, and hands-on help with AI automation, integration, and implementation — from an
@@ -86,7 +84,7 @@ export default function Home() {
       </section>
 
       {/* 4 · Hub pillars */}
-      <section className="border-y border-line bg-surface py-16 sm:py-20">
+      <section className="border-y border-line bg-white/[0.015] py-16 sm:py-20">
         <Container>
           <Reveal>
             <SectionHeading
@@ -129,7 +127,7 @@ export default function Home() {
       </section>
 
       {/* 6 · Blueprint rail */}
-      <section className="border-y border-line bg-surface py-16 sm:py-20">
+      <section className="border-y border-line bg-white/[0.015] py-16 sm:py-20">
         <Container>
           <Reveal>
             <SectionHeading
@@ -162,7 +160,7 @@ export default function Home() {
       </section>
 
       {/* 8 · SMB AI Daily */}
-      <section className="border-y border-line bg-surface py-16 sm:py-20">
+      <section className="border-y border-line bg-white/[0.015] py-16 sm:py-20">
         <Container>
           <Reveal>
             <SectionHeading
@@ -196,7 +194,7 @@ export default function Home() {
       </section>
 
       {/* 10 · FAQ */}
-      <section className="border-t border-line bg-surface py-16 sm:py-20">
+      <section className="border-t border-line bg-white/[0.015] py-16 sm:py-20">
         <Container className="grid gap-10 lg:grid-cols-[1fr_2fr]">
           <Reveal>
             <Eyebrow>FAQ</Eyebrow>

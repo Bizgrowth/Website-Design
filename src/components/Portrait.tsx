@@ -23,7 +23,7 @@ export function Portrait({ size = 320, className = "" }: { size?: number; classN
       role="img"
       aria-label={site.owner}
       style={{ width: size, maxWidth: "100%" }}
-      className={`grid aspect-square place-items-center rounded-2xl bg-navy text-5xl font-bold text-white ${className}`}
+      className={`grid aspect-square place-items-center orb-glow rounded-2xl text-5xl font-bold text-white ${className}`}
     >
       DS
     </div>
