@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageTransition } from "@/components/PageTransition";
 import { CtaBand } from "@/components/CtaBand";
 import { Card, Container, Eyebrow, PageHeader } from "@/components/ui";
 import { services } from "@/lib/taxonomy";
@@ -16,7 +17,7 @@ const ladder = [
 
 export default function ServicesPage() {
   return (
-    <>
+    <PageTransition>
       <PageHeader
         eyebrow="Services"
         title="From “where do we start?” to AI that runs — and stays running"
@@ -49,6 +50,6 @@ export default function ServicesPage() {
         </div>
       </Container>
       <CtaBand />
-    </>
+    </PageTransition>
   );
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageTransition } from "@/components/PageTransition";
 import Link from "next/link";
 import { CtaBand } from "@/components/CtaBand";
 import { Container, PageHeader, PillarTags } from "@/components/ui";
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 export default function UpdatesPage() {
   const updates = getUpdates();
   return (
-    <>
+    <PageTransition>
       <PageHeader
         eyebrow="SMB AI Daily"
         title="What changed in AI operations — and what it means for your business"
@@ -35,6 +36,6 @@ export default function UpdatesPage() {
         </ol>
       </Container>
       <CtaBand />
-    </>
+    </PageTransition>
   );
 }

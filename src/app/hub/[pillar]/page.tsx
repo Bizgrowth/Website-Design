@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageTransition } from "@/components/PageTransition";
 import { notFound } from "next/navigation";
 import { BlueprintCard, GuideCard, UpdateCard } from "@/components/cards";
 import { ConnectedStack } from "@/components/ConnectedStack";
@@ -27,7 +28,7 @@ export default async function PillarPage(props: PageProps<"/hub/[pillar]">) {
   const relatedServices = services.filter((s) => s.pillars.includes(pillar.slug));
 
   return (
-    <>
+    <PageTransition>
       <PageHeader eyebrow={`AI Hub · ${pillar.name}`} title={pillar.question} lead={pillar.summary} />
       {pillar.slug === "integration" && <ConnectedStack />}
 
@@ -55,7 +56,7 @@ export default async function PillarPage(props: PageProps<"/hub/[pillar]">) {
         ))}
       </Section>
       <CtaBand />
-    </>
+    </PageTransition>
   );
 }
 

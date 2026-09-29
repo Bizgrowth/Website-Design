@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageTransition } from "@/components/PageTransition";
 import Script from "next/script";
 import { ContactDetails } from "@/components/ContactDetails";
 import { Portrait } from "@/components/Portrait";
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <>
+    <PageTransition>
       <PageHeader
         eyebrow="Contact"
         title="Book a 30-minute operations call"
@@ -26,9 +27,16 @@ export default function ContactPage() {
             <ContactDetails className="mt-3" />
           </div>
         </aside>
-        <div className="overflow-hidden rounded-2xl border border-line bg-surface">
+        <div className="relative overflow-hidden rounded-2xl border border-line bg-surface">
+          {/* Shimmer placeholder until the Calendly iframe paints over it */}
+          <div aria-hidden className="absolute inset-0 space-y-4 p-8">
+            <div className="skeleton h-8 w-1/2 rounded-lg" />
+            <div className="skeleton h-4 w-1/3 rounded" />
+            <div className="skeleton mt-8 h-72 w-full rounded-xl" />
+            <div className="skeleton h-12 w-2/3 rounded-lg" />
+          </div>
           <div
-            className="calendly-inline-widget"
+            className="calendly-inline-widget relative"
             data-url={`${site.bookingUrl}?hide_gdpr_banner=1`}
             style={{ minWidth: 320, height: 720 }}
           />
@@ -40,6 +48,6 @@ export default function ContactPage() {
           <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" />
         </div>
       </Container>
-    </>
+    </PageTransition>
   );
 }

@@ -1,10 +1,12 @@
 import Link from "next/link";
+import { PageTransition } from "@/components/PageTransition";
 import { UpdateCard } from "@/components/cards";
 import { ConnectedStack } from "@/components/ConnectedStack";
 import { CtaBand } from "@/components/CtaBand";
 import { Faq } from "@/components/Faq";
 import { AutonomyScroller } from "@/components/interactive/AutonomyScroller";
 import { BlueprintRail } from "@/components/interactive/BlueprintRail";
+import { FlipCard, HeroParallax, Tilt, WordCascade, ZoomIn } from "@/components/interactive/Effects";
 import { HeroWorkflow } from "@/components/interactive/HeroWorkflow";
 import { ProcessTimeline } from "@/components/interactive/ProcessTimeline";
 import { Reveal, Stagger } from "@/components/interactive/Reveal";
@@ -29,53 +31,72 @@ export default function Home() {
   }));
 
   return (
-    <>
-      {/* 1 · Hero with a live workflow visual */}
-      <section className="hero-backdrop text-white">
-        <Container className="grid gap-12 py-16 sm:py-24 lg:grid-cols-[1.2fr_1fr] lg:items-center">
-          <Reveal>
-            <Eyebrow>The SMB hub for AI operations</Eyebrow>
-            <h1 className="mt-6 text-4xl font-extrabold tracking-tight leading-[1.1] sm:text-5xl xl:text-[3.4rem]">
-              AI that runs your operations — <span className="text-flare-gradient">measured, controlled, and owned.</span>
-            </h1>
-            <p className="mt-6 max-w-xl text-lg text-white/70">
-              Blueprints, daily updates, and hands-on help with AI automation, integration, and implementation — from an
-              operator who scaled a company from $0 to $265M.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <ButtonLink href={site.bookingUrl} variant="inverse">Book an Ops Call</ButtonLink>
-              <Link
-                href="/blueprints"
-                className="inline-flex items-center rounded-lg border border-white/25 px-5 py-2.5 text-sm font-semibold hover:bg-white/10"
-              >
-                See the blueprints
-              </Link>
-            </div>
-          </Reveal>
-          <Reveal delay={0.15}>
-            <HeroWorkflow />
-          </Reveal>
+    <PageTransition>
+      {/* 1 · Hero: three-layer parallax, cascading headline, tilting live visual */}
+      <section className="text-white">
+        <Container>
+          <HeroParallax
+            className="py-12 sm:py-20"
+            copy={
+              <>
+                <Reveal>
+                  <Eyebrow>The SMB hub for AI operations</Eyebrow>
+                </Reveal>
+                <h1 className="mt-6 text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl xl:text-[3.4rem]">
+                  <WordCascade text="AI that runs your operations —" delay={0.1} />{" "}
+                  <WordCascade text="measured, controlled, and owned." delay={0.45} className="text-flare-gradient" />
+                </h1>
+                <Reveal delay={0.7}>
+                  <p className="mt-6 max-w-xl text-lg text-white/70">
+                    Blueprints, daily updates, and hands-on help with AI automation, integration, and implementation —
+                    from an operator who scaled a company from $0 to $265M.
+                  </p>
+                  <div className="mt-8 flex flex-wrap gap-3">
+                    <ButtonLink href={site.bookingUrl}>Book an Ops Call</ButtonLink>
+                    <ButtonLink href="/blueprints" variant="secondary">See the blueprints</ButtonLink>
+                  </div>
+                </Reveal>
+              </>
+            }
+            visual={
+              <ZoomIn>
+                <Tilt>
+                  <HeroWorkflow />
+                </Tilt>
+              </ZoomIn>
+            }
+          />
         </Container>
       </section>
 
-      {/* 3 · Operator proof */}
+      {/* 2 · Operator proof: zoom-in portrait, flip cards with the story behind each number */}
       <section className="py-16 sm:py-20">
         <Container className="grid items-center gap-10 lg:grid-cols-[280px_1fr]">
-          <Reveal>
+          <ZoomIn>
             <Portrait size={280} />
-          </Reveal>
+          </ZoomIn>
           <div>
             <Reveal>
               <Eyebrow>The operator behind the hub</Eyebrow>
-              <h2 className="mt-2 text-2xl font-bold sm:text-3xl">AI is new. Running operations isn&apos;t.</h2>
+              <h2 className="mt-4 text-3xl font-bold sm:text-4xl">AI is new. Running operations isn&apos;t.</h2>
               <p className="mt-3 max-w-2xl text-muted">{site.intro}</p>
             </Reveal>
             <Stagger className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4">
               {trackRecord.headline.map((h) => (
-                <div key={h.label} className="h-full rounded-2xl border border-line bg-surface p-5">
-                  <p className="text-2xl font-bold tabular-nums">{h.value}</p>
-                  <p className="mt-1 text-xs text-muted">{h.label}</p>
-                </div>
+                <FlipCard
+                  key={h.label}
+                  className="h-44"
+                  front={
+                    <>
+                      <p className="text-2xl font-bold tabular-nums">{h.value}</p>
+                      <div>
+                        <p className="text-xs text-muted">{h.label}</p>
+                        <p className="mt-2 font-mono text-[10px] uppercase tracking-wider text-hero-accent">The story ↻</p>
+                      </div>
+                    </>
+                  }
+                  back={<p className="text-xs leading-relaxed text-ink">{h.story}</p>}
+                />
               ))}
             </Stagger>
             <Link href="/about" className="mt-5 inline-block text-sm font-semibold text-accent">Meet Daniel →</Link>
@@ -205,6 +226,6 @@ export default function Home() {
       </section>
 
       <CtaBand />
-    </>
+    </PageTransition>
   );
 }

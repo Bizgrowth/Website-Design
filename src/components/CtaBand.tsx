@@ -1,4 +1,5 @@
 import { site } from "@/lib/site";
+import { CircleReveal } from "./interactive/Effects";
 import { ButtonLink, Container } from "./ui";
 
 export function CtaBand({
@@ -11,6 +12,7 @@ export function CtaBand({
   return (
     <section className="py-16">
       <Container>
+        <CircleReveal>
         <div className="glass flare-edge relative flex flex-col gap-6 overflow-hidden rounded-3xl p-10 md:flex-row md:items-center md:justify-between md:p-14">
         <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-r from-flare/10 via-transparent to-accent/10" />
         <div className="relative max-w-2xl">
@@ -21,6 +23,7 @@ export function CtaBand({
           <ButtonLink href={site.bookingUrl}>Book an Ops Call →</ButtonLink>
         </div>
         </div>
+        </CircleReveal>
       </Container>
     </section>
   );

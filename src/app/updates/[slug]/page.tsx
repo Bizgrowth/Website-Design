@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageTransition } from "@/components/PageTransition";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CtaBand } from "@/components/CtaBand";
@@ -19,7 +20,7 @@ export default async function UpdatePage(props: PageProps<"/updates/[slug]">) {
   if (!u) notFound();
 
   return (
-    <>
+    <PageTransition>
       <Container className="py-12 sm:py-16">
         <Link href="/updates" className="text-sm text-muted hover:text-ink">← SMB AI Daily</Link>
         <time dateTime={u.date} className="mt-6 block text-sm font-semibold text-faint">{formatDate(u.date)}</time>
@@ -51,6 +52,6 @@ export default async function UpdatePage(props: PageProps<"/updates/[slug]">) {
         </div>
       </Container>
       <CtaBand />
-    </>
+    </PageTransition>
   );
 }

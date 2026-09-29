@@ -320,3 +320,120 @@ h3 {
   background-clip: text;
   color: transparent;
 }
+
+/* ---------- Page transitions (React ViewTransition) ---------- */
+
+::view-transition {
+  pointer-events: none;
+}
+/* Keep the header anchored while content changes underneath it. */
+::view-transition-group(site-header) {
+  animation: none;
+  z-index: 100;
+}
+::view-transition-old(site-header) {
+  display: none;
+}
+::view-transition-new(site-header) {
+  animation: none;
+}
+::view-transition-old(.page-exit) {
+  animation: 160ms ease-in both vt-fade reverse, 160ms ease-in both vt-lift reverse;
+}
+::view-transition-new(.page-enter) {
+  animation: 260ms ease-out 120ms both vt-fade, 420ms cubic-bezier(0.22, 1, 0.36, 1) both vt-lift;
+}
+/* Shared element (blueprint card title → blueprint page headline). */
+::view-transition-group(.morph) {
+  animation-duration: 450ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+::view-transition-image-pair(.morph) {
+  animation-name: vt-via-blur;
+}
+@keyframes vt-fade {
+  from { opacity: 0; filter: blur(4px); }
+  to { opacity: 1; filter: blur(0); }
+}
+@keyframes vt-lift {
+  from { transform: translateY(14px); }
+  to { transform: translateY(0); }
+}
+@keyframes vt-via-blur {
+  30% { filter: blur(3px); }
+}
+
+/* ---------- Micro-interactions ---------- */
+
+/* Light sweep across primary buttons on hover. */
+.btn-flare {
+  position: relative;
+  overflow: hidden;
+}
+.btn-flare::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-120%) skewX(-20deg);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+}
+.btn-flare:hover::after {
+  transform: translateX(120%) skewX(-20deg);
+}
+.btn-flare:hover,
+.btn-ghost:hover {
+  transform: translateY(-1px);
+}
+
+/* Animated underline for header links; stays on for the current page. */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.3rem;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--hero-accent), var(--flare));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nav-link:hover::after,
+.nav-link[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+/* Skeleton shimmer for loading areas. */
+.skeleton {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 25%, rgba(255, 255, 255, 0.08) 50%, rgba(255, 255, 255, 0.03) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+/* Visible keyboard focus everywhere. */
+:focus-visible {
+  outline: 2px solid var(--hero-accent);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+  .skeleton {
+    animation: none;
+  }
+  .btn-flare::after {
+    display: none;
+  }
+}

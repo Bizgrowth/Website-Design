@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Morph } from "@/components/PageTransition";
 import { useRef, type PointerEvent } from "react";
 
 export type RailItem = { slug: string; title: string; summary: string; industry: string; stack: string[] };
@@ -67,7 +68,9 @@ export function BlueprintRail({ items }: { items: RailItem[] }) {
               <span className="rounded-full bg-warn-soft px-2.5 py-0.5 text-xs font-medium text-warn">Reference build</span>
             </div>
             <p className="mt-6 text-xs font-medium text-accent">{b.industry}</p>
-            <h3 className="mt-1 text-xl font-bold">{b.title}</h3>
+            <Morph name={`bp-${b.slug}`}>
+              <h3 className="mt-1 text-xl font-bold">{b.title}</h3>
+            </Morph>
             <p className="mt-3 flex-1 text-sm text-muted">{b.summary}</p>
             <p className="mt-6 font-mono text-xs text-faint">{b.stack.join(" · ")}</p>
             <span className="mt-4 text-sm font-semibold text-accent transition group-hover:translate-x-1">

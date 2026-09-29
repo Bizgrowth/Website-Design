@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { Wipe } from "@/components/interactive/Effects";
 import { pillarBySlug, type PillarSlug } from "@/lib/taxonomy";
 
 export function Container({ children, className = "" }: { children: ReactNode; className?: string }) {
@@ -31,7 +32,9 @@ export function SectionHeading({
     <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
       <div className="max-w-2xl">
         {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-        <h2 className="mt-4 text-3xl font-bold sm:text-4xl">{title}</h2>
+        <Wipe>
+          <h2 className="mt-4 text-3xl font-bold sm:text-4xl">{title}</h2>
+        </Wipe>
         {lead && <p className="mt-3 text-muted">{lead}</p>}
       </div>
       {action}
@@ -111,7 +114,7 @@ export function ButtonLink({
 }) {
   const styles = {
     primary: "btn-flare",
-    secondary: "border border-white/15 bg-white/[0.04] text-ink hover:bg-white/[0.08]",
+    secondary: "btn-ghost border border-white/15 bg-white/[0.04] text-ink hover:bg-white/[0.08]",
     inverse: "btn-flare",
   };
   return (

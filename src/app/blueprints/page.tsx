@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageTransition } from "@/components/PageTransition";
 import { BlueprintCard } from "@/components/cards";
 import { CtaBand } from "@/components/CtaBand";
 import { Container, PageHeader } from "@/components/ui";
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 export default function BlueprintsPage() {
   const blueprints = getBlueprints();
   return (
-    <>
+    <PageTransition>
       <PageHeader
         eyebrow="Blueprints"
         title="The exact systems — architecture, stack, and controls"
@@ -26,6 +27,6 @@ export default function BlueprintsPage() {
         </div>
       </Container>
       <CtaBand title="Want one of these running in your business?" />
-    </>
+    </PageTransition>
   );
 }

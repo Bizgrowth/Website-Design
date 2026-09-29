@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageTransition } from "@/components/PageTransition";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BlueprintCard } from "@/components/cards";
@@ -25,7 +26,7 @@ export default async function ServicePage(props: PageProps<"/services/[slug]">) 
     .slice(0, 3);
 
   return (
-    <>
+    <PageTransition>
       <PageHeader eyebrow={`Services · ${s.name}`} title={s.outcome} lead={s.summary} />
       <Container className="grid gap-10 py-14 md:grid-cols-2">
         <div className="rounded-2xl border border-line bg-surface p-6">
@@ -58,6 +59,6 @@ export default async function ServicePage(props: PageProps<"/services/[slug]">) 
         </section>
       )}
       <CtaBand />
-    </>
+    </PageTransition>
   );
 }

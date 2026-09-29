@@ -1,10 +1,26 @@
 // Verified executive results from Daniel's resume. Only add items that would hold up on a reference call.
 export const trackRecord = {
   headline: [
-    { value: "$0 → $265M", label: "Revenue built in under 5 years (Align Networks)" },
-    { value: "12X EBITDA", label: "Exit to General Atlantic (Techhealth)" },
-    { value: "$1B", label: "Real estate portfolio operated as COO" },
-    { value: "$15M → $75M", label: "Revenue in under a year (One Call)" },
+    {
+      value: "$0 → $265M",
+      label: "Revenue built in under 5 years (Align Networks)",
+      story: "Built the operating platform for a startup workers' comp rehab network, secured payers like Liberty Mutual and Zurich, and played a key role in its acquisition by an equity firm.",
+    },
+    {
+      value: "12X EBITDA",
+      label: "Exit to General Atlantic (Techhealth)",
+      story: "Designed and executed the exit strategy for a workers' comp healthcare network — from operational optimization through the private equity close.",
+    },
+    {
+      value: "$1B",
+      label: "Real estate portfolio operated as COO",
+      story: "Built one platform across property management, construction, brokerage, and procurement for The Klotz Group. Occupancy rose from 94% to 98%.",
+    },
+    {
+      value: "$15M → $75M",
+      label: "Revenue in under a year (One Call)",
+      story: "Pioneered a clinical patient performance platform at One Call Care Management that grew revenue fivefold in under twelve months.",
+    },
   ],
   roles: [
     {

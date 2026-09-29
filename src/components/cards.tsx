@@ -1,4 +1,5 @@
 import { formatDate, type Blueprint, type Guide, type Update } from "@/lib/content";
+import { Morph } from "./PageTransition";
 import { Card, PillarTags, ReferenceBuildTag, Tag } from "./ui";
 
 export function BlueprintCard({ blueprint }: { blueprint: Blueprint }) {
@@ -8,7 +9,9 @@ export function BlueprintCard({ blueprint }: { blueprint: Blueprint }) {
         <ReferenceBuildTag />
         <Tag>{blueprint.industry}</Tag>
       </div>
-      <h3 className="mt-4 text-lg font-bold">{blueprint.title}</h3>
+      <Morph name={`bp-${blueprint.slug}`}>
+        <h3 className="mt-4 text-lg font-bold">{blueprint.title}</h3>
+      </Morph>
       <p className="mt-2 flex-1 text-sm text-muted">{blueprint.summary}</p>
       <p className="mt-4 font-mono text-xs text-faint">{blueprint.stack.join(" · ")}</p>
     </Card>

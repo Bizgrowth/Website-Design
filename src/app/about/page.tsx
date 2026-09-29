@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import { PageTransition } from "@/components/PageTransition";
 import Link from "next/link";
 import { ContactDetails } from "@/components/ContactDetails";
 import { CtaBand } from "@/components/CtaBand";
+import { ZoomIn } from "@/components/interactive/Effects";
 import { Reveal } from "@/components/interactive/Reveal";
 import { Portrait } from "@/components/Portrait";
 import { Container, Eyebrow } from "@/components/ui";
@@ -15,12 +17,12 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <>
+    <PageTransition>
       <section className="border-b border-line bg-white/[0.015]">
         <Container className="grid items-center gap-10 py-14 md:grid-cols-[320px_1fr]">
-          <Reveal>
+          <ZoomIn>
             <Portrait size={320} />
-          </Reveal>
+          </ZoomIn>
           <Reveal delay={0.1}>
             <Eyebrow>About</Eyebrow>
             <h1 className="mt-3 text-4xl font-bold sm:text-5xl">{site.owner}</h1>
@@ -57,6 +59,6 @@ export default function AboutPage() {
         </dl>
       </Container>
       <CtaBand />
-    </>
+    </PageTransition>
   );
 }

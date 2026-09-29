@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageTransition } from "@/components/PageTransition";
 import { GuideCard, UpdateCard } from "@/components/cards";
 import { CtaBand } from "@/components/CtaBand";
 import { ButtonLink, Card, Container, PageHeader, SectionHeading } from "@/components/ui";
@@ -16,7 +17,7 @@ export default function HubPage() {
   const updates = getUpdates();
 
   return (
-    <>
+    <PageTransition>
       <PageHeader
         eyebrow="The AI Hub"
         title="AI automation, integration, and implementation — in one place"
@@ -67,6 +68,6 @@ export default function HubPage() {
       </section>
 
       <CtaBand />
-    </>
+    </PageTransition>
   );
 }

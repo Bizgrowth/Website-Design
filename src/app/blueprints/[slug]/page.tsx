@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Morph, PageTransition } from "@/components/PageTransition";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CtaBand } from "@/components/CtaBand";
@@ -19,7 +20,7 @@ export default async function BlueprintPage(props: PageProps<"/blueprints/[slug]
   if (!b) notFound();
 
   return (
-    <>
+    <PageTransition>
       <header className="hero-backdrop border-b border-line">
         <Container className="py-12 sm:py-16">
           <Link href="/blueprints" className="text-sm text-muted hover:text-ink">← All blueprints</Link>
@@ -27,7 +28,9 @@ export default async function BlueprintPage(props: PageProps<"/blueprints/[slug]
             <ReferenceBuildTag />
             <Tag>{b.industry}</Tag>
           </div>
-          <h1 className="mt-4 max-w-3xl text-3xl font-bold sm:text-5xl">{b.title}</h1>
+          <Morph name={`bp-${b.slug}`}>
+            <h1 className="mt-4 max-w-3xl text-3xl font-bold sm:text-5xl">{b.title}</h1>
+          </Morph>
           <p className="mt-4 max-w-2xl text-lg text-muted">{b.summary}</p>
           <div className="mt-5">
             <PillarTags pillars={b.pillars} />
@@ -61,7 +64,7 @@ export default async function BlueprintPage(props: PageProps<"/blueprints/[slug]
         </aside>
       </Container>
       <CtaBand title="Want this running in your business?" lead="We adapt the blueprint to your tools, set the controls, and measure it against your baseline." />
-    </>
+    </PageTransition>
   );
 }
 

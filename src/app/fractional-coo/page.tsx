@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageTransition } from "@/components/PageTransition";
 import { CtaBand } from "@/components/CtaBand";
 import { Container, Eyebrow, PageHeader } from "@/components/ui";
 
@@ -23,7 +24,7 @@ const fit = [
 
 export default function FractionalCooPage() {
   return (
-    <>
+    <PageTransition>
       <PageHeader
         eyebrow="Premium · Fractional COO"
         title="A COO who has scaled to $265M — part-time, with AI built in"
@@ -44,6 +45,6 @@ export default function FractionalCooPage() {
         </div>
       </Container>
       <CtaBand title="Talk through what your operation needs." />
-    </>
+    </PageTransition>
   );
 }

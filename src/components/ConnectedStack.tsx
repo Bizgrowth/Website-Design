@@ -1,3 +1,4 @@
+import { ParallaxLayer } from "@/components/interactive/Effects";
 import { Reveal } from "@/components/interactive/Reveal";
 import { StackExplorer } from "@/components/interactive/StackExplorer";
 import { StackSteps } from "@/components/interactive/StackSteps";
@@ -26,7 +27,7 @@ export function ConnectedStack() {
         <div className="mt-10">
           <StackExplorer integrations={integrations} categories={categories} blueprintTitles={blueprintTitles} />
         </div>
-        <div className="mt-16">
+        <ParallaxLayer speed={0.08} className="mt-16">
           <StackSteps
             icons={{
               gmail: iconOf("Gmail"),
@@ -35,7 +36,7 @@ export function ConnectedStack() {
               hubspot: iconOf("HubSpot"),
             }}
           />
-        </div>
+        </ParallaxLayer>
       </Container>
     </section>
   );

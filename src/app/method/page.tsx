@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageTransition } from "@/components/PageTransition";
 import { CtaBand } from "@/components/CtaBand";
 import { EarnedAutonomy } from "@/components/EarnedAutonomy";
 import { ProcessTimeline } from "@/components/interactive/ProcessTimeline";
@@ -19,7 +20,7 @@ const layers = [
 
 export default function MethodPage() {
   return (
-    <>
+    <PageTransition>
       <PageHeader
         eyebrow="Method"
         title="Earned Autonomy: AI that starts supervised and earns its independence"
@@ -54,6 +55,6 @@ export default function MethodPage() {
         </p>
       </Container>
       <CtaBand />
-    </>
+    </PageTransition>
   );
 }

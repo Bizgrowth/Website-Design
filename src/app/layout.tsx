@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
+import { Atmosphere } from "@/components/interactive/Effects";
 import { MotionProvider, ScrollProgress } from "@/components/interactive/MotionProvider";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -34,11 +35,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <noscript>
           <style>{`[data-reveal]{opacity:1!important;transform:none!important}`}</style>
         </noscript>
-        <div className="atmosphere" aria-hidden />
         <MotionProvider>
+          <Atmosphere />
           <ScrollProgress />
           <SiteHeader />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 pt-20">{children}</main>
           <SiteFooter />
         </MotionProvider>
       </body>

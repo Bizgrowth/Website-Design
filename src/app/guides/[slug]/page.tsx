@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageTransition } from "@/components/PageTransition";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CtaBand } from "@/components/CtaBand";
@@ -19,7 +20,7 @@ export default async function GuidePage(props: PageProps<"/guides/[slug]">) {
   if (!g) notFound();
 
   return (
-    <>
+    <PageTransition>
       <Container className="py-12 sm:py-16">
         <Link href="/hub" className="text-sm text-muted hover:text-ink">← AI Hub</Link>
         <p className="mt-6 text-sm font-semibold text-faint">Guide · {g.readingMinutes} min read</p>
@@ -29,6 +30,6 @@ export default async function GuidePage(props: PageProps<"/guides/[slug]">) {
         <article className="prose mt-10" dangerouslySetInnerHTML={{ __html: g.html }} />
       </Container>
       <CtaBand />
-    </>
+    </PageTransition>
   );
 }

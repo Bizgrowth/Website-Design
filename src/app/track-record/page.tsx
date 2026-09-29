@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageTransition } from "@/components/PageTransition";
 import { CtaBand } from "@/components/CtaBand";
 import { Container, PageHeader } from "@/components/ui";
 import { trackRecord } from "@/lib/track-record";
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function TrackRecordPage() {
   return (
-    <>
+    <PageTransition>
       <PageHeader
         eyebrow="Track Record"
         title="AI is new. Running operations isn't."
@@ -44,6 +45,6 @@ export default function TrackRecordPage() {
         </ol>
       </Container>
       <CtaBand />
-    </>
+    </PageTransition>
   );
 }

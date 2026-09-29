@@ -33,3 +33,22 @@ Dark glassmorphism with atmospheric light: a near-black canvas crossed by soft a
 ## Layout
 - Max content width ~1152–1280px, generous vertical spacing (up to 6rem between sections).
 - Fixed atmospheric background on every page (`.atmosphere` in the root layout).
+
+## Motion system
+All motion respects the visitor's "reduce motion" setting, and content is visible without JavaScript.
+
+| Technique | Where | Component |
+|---|---|---|
+| Smart header | Clear at top → frosted glass after 24px → hides on scroll down, returns on scroll up | `SiteHeader` |
+| Hamburger → X morph + fading overlay menu with cascading links | Mobile | `SiteHeader` |
+| Parallax (3 depth layers) | Home hero: glow background, copy, live visual | `HeroParallax` |
+| Parallax (ambient) | Fixed light streaks drift slower than the page | `Atmosphere` |
+| Mouse parallax / 3D tilt | Hero live-queue card | `Tilt` |
+| Page transitions (fade + lift) | Every route change, header stays anchored | `PageTransition` (React ViewTransition) |
+| Shared element | Blueprint card title glides into the blueprint page headline | `Morph` |
+| Staggered cascade | Hero headline word by word; card grids | `WordCascade`, `Stagger` |
+| Wipe | Section headlines | `Wipe` (inside `SectionHeading`) |
+| Circle reveal (mask) | Closing call-to-action | `CircleReveal` |
+| Zoom | Portrait, hero visual | `ZoomIn` |
+| Flip cards | Headline results → the story behind each | `FlipCard` |
+| Micro-interactions | Button light sweep + lift, animated nav underline, card glow, skeleton shimmer for Calendly | `globals.css` |
