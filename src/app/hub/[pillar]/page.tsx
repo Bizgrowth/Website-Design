@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BlueprintCard, GuideCard, UpdateCard } from "@/components/cards";
+import { ConnectedStack } from "@/components/ConnectedStack";
 import { CtaBand } from "@/components/CtaBand";
 import { Card, Container, PageHeader, SectionHeading } from "@/components/ui";
 import { getBlueprints, getGuides, getUpdates } from "@/lib/content";
@@ -28,6 +29,7 @@ export default async function PillarPage(props: PageProps<"/hub/[pillar]">) {
   return (
     <>
       <PageHeader eyebrow={`AI Hub · ${pillar.name}`} title={pillar.question} lead={pillar.summary} />
+      {pillar.slug === "integration" && <ConnectedStack />}
 
       {guides.length > 0 && (
         <Section title="Guides">

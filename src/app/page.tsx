@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { UpdateCard } from "@/components/cards";
+import { ConnectedStack } from "@/components/ConnectedStack";
 import { CtaBand } from "@/components/CtaBand";
 import { Faq } from "@/components/Faq";
 import { AutonomyScroller } from "@/components/interactive/AutonomyScroller";
@@ -8,7 +9,6 @@ import { HeroWorkflow } from "@/components/interactive/HeroWorkflow";
 import { ProcessTimeline } from "@/components/interactive/ProcessTimeline";
 import { Reveal, Stagger } from "@/components/interactive/Reveal";
 import { SpotlightCard } from "@/components/interactive/SpotlightCard";
-import { ToolMarquee } from "@/components/interactive/ToolMarquee";
 import { OfferLadder } from "@/components/OfferLadder";
 import { Portrait } from "@/components/Portrait";
 import { ButtonLink, Container, Eyebrow, SectionHeading } from "@/components/ui";
@@ -57,16 +57,6 @@ export default function Home() {
           <Reveal delay={0.15}>
             <HeroWorkflow />
           </Reveal>
-        </Container>
-      </section>
-
-      {/* 2 · Tool strip */}
-      <section className="border-b border-line bg-surface py-8">
-        <Container>
-          <p className="mb-4 text-center text-xs font-semibold uppercase tracking-wider text-faint">
-            Built on the tools SMBs already run
-          </p>
-          <ToolMarquee />
         </Container>
       </section>
 
@@ -121,6 +111,8 @@ export default function Home() {
           </Stagger>
         </Container>
       </section>
+
+      <ConnectedStack />
 
       {/* 5 · Earned Autonomy, scroll-driven */}
       <section className="py-16 sm:py-24">
