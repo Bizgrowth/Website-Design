@@ -3,7 +3,7 @@
 Status: Draft pending answers to the open questions in section 7. Nothing here is final until those are answered.
 Date: 2026-09-29
 
-Sources reviewed: live aiopsexpert.com, the site critique doc (Google Drive), Daniel_Schley_Freelance_Resume, Upwork Execution Plan, "The Ultimate Upwork Pitch Strategy" deck, the marina/campground Relevance AI SOW, the August 2026 daily SMB briefings, and the prior strategy conversation (AI Ops OS, earned autonomy, industry packs). The Bizgrowth/Upwork-Job-Analysis GitHub repo is empty (nothing has been pushed), so no job-analysis data was available.
+Sources reviewed: live aiopsexpert.com, the site critique doc (Google Drive), Daniel_Schley_Freelance_Resume, Upwork Execution Plan, "The Ultimate Upwork Pitch Strategy" deck, the marina/campground Relevance AI SOW, the August 2026 daily SMB briefings, and the prior strategy conversation (AI Ops OS, earned autonomy, industry packs). The Bizgrowth/Upwork-Job-Analysis GitHub repo is empty (nothing has been pushed), so the "Upwork Market Intel" artifact (Sep 2026) was used as the job-analysis source.
 
 ---
 
@@ -20,6 +20,8 @@ The strategy direction (an operating system that makes AI safe, measured, and re
 | 3 | **Ops knowledge assistant**: SOPs, policies, and rate cards answered accurately and kept current by staff | Critique doc #3; marina knowledge base requirement |
 | 4 | **Proof it's safe and working**: eval sets, pass-rate gates, confidence thresholds, escalation | Marina job asked for this explicitly (150-row labeled set, promptfoo, pre-publish gating) |
 | 5 | **Someone to own it after launch**: maintenance, promotion to auto-send, and the next agent | Marina "follow-on program"; the retainer thesis |
+
+**Upwork Market Intel (Sep 2026 artifact) confirms the direction.** Make and n8n are the #1 and #2 tools named in job posts. Workflow automation is the most-posted automation category. AI integration is up 178% YoY, CRM automation ranks #2, and business process automation (approvals, document routing) is growing. "Operations consulting + automation" and "Healthcare + AI" are listed as the least-competed niches. AI Strategy Consulting pays $75–200/hr. Two cautions: AI is still only ~3% of the Upwork feed, and most of those figures come from third-party blogs, so treat them as directional. **Reject** the artifact's "quick wins" (content editing, data entry, under-bidding). For a former $265M operator, low-value reviews lower your rate ceiling and contradict the positioning.
 
 **Key insight:** The marina buyer described your AI Ops OS without knowing it exists. They asked for drafts first, measurement before auto-send, per-intent promotion, a reusable tool layer, and documentation so staff can own it. That is **earned autonomy**. Buyers purchase #1–#3. The OS (#4–#5) is *why they pick you and why they stay*. It is the differentiator, not the headline product.
 
