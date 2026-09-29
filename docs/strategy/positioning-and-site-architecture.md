@@ -1,4 +1,4 @@
-# AI Ops Expert — Positioning & Site Architecture Brief (v1)
+# AI Operations Expert — Positioning & Site Architecture Brief (v2)
 
 Status: Working strategy. Section 8 lists the few remaining decisions.
 Date: 2026-09-29
@@ -22,23 +22,52 @@ Demo builds are shown as **"System Blueprints"**, clearly labeled as reference b
 - The honest version is stronger anyway: "Here is the exact system I would build for you, running live. Here is the operating record behind the person installing it."
 - The first 2–3 paid engagements become the real case studies (section 5).
 
-## 3. Strategy: two tracks, one brand
+## 3. Decisions locked (2026-09-29)
 
-The mistake would be waiting for the AI practice to pay the bills. **Sell the COO first and use AI as the edge.** Fractional operations leadership is what your resume already proves. AI is what makes you different from every other fractional COO.
+- **Brand:** AI Operations Expert, on aiopsexpert.com. Retire "AI Ops Experts" and aioperationsexperts.com everywhere.
+- **Site platform:** Lovable, synced to this repo.
+- **Income floor:** $1,000/month. **Capacity:** 60 hrs/week.
+- **Service pillars** (Daniel's areas of depth):
+  1. AI Readiness (assessment, roadmap, governance baseline)
+  2. Workflow Automation & Tool Integration (Make, n8n, HubSpot, QuickBooks, APIs)
+  3. AI Agents: build, manage, scale (triage, intake, knowledge, multi-agent)
+  4. Ops Dashboards (KPI and AI-performance visibility)
+  5. AI Governance (runs through all of the above: approval matrix, evals, failure playbooks)
 
-| | Track A — Cash now (0–90 days) | Track B — The AI Ops practice (build in parallel) |
+## 4. Strategy: two tracks, one brand
+
+The $1,000 floor is covered by a single fixed-price Upwork job, so **Upwork is the cash track** and direct SMB sales is the growth track. Fractional COO work is kept as a premium offer and as credibility, not as the survival plan.
+
+| | Track A — Upwork cash + reviews (now) | Track B — Direct AI Ops practice (build in parallel) |
 |---|---|---|
-| What | Fractional COO / operations leadership, with AI as the edge | Productized AI workflows under the Earned Autonomy method |
-| Buyer | Owner-led companies ($2M–$50M), PE/search-fund portfolio companies, healthcare services, property management | Same buyers, once you're inside them, plus Upwork |
-| Price | $5K–$12K/month retainer (10–20 hrs/wk), or $150–$250/hr advisory | $2.5K Diagnostic → $6K–$15K builds → $2K–$5K/month Oversight |
-| Channel | Warm network (workers' comp, real estate, KABR/Klotz circle), LinkedIn, fractional marketplaces, PE/search-fund operating partners | Upwork (fixed-price $1.5K–$8K jobs like the marina SOW), plus upsell to Track A clients |
-| Proof | Resume track record | System Blueprints now, then paid case studies |
+| What | Fixed-price builds from the existing blueprint library | Diagnostic → governed build → Oversight retainer, plus fractional COO |
+| Price | First 3 jobs: $500–$1,500 to earn reviews. After that, $1,500–$8,000 (marina SOW model) | $2.5K Diagnostic → $6K–$15K builds → $2K–$5K/month Oversight; fractional $5K–$12K/month |
+| Buyer | Businesses posting Make/n8n, agent, CRM, and dashboard jobs | Healthcare services and property management owners; PE/search-fund portfolio companies |
+| Proof | Blueprint library, 90-second Looms, honest labeling | Upwork reviews + first paid case studies + executive track record |
 
-**How the tracks connect:** Every fractional COO client gets an AI Ops Diagnostic in the first 30 days. That turns Track A income into Track B case studies without having to find new clients.
+**Upwork rules:** No jobs under $500. No data entry, content editing, or under-bidding below $500. Every proposal links to the matching blueprint.
 
-**Upwork rules:** Only bid on $1,500+ fixed-price AI/ops jobs (workflow automation, triage agents, CRM/process automation, AI strategy). No $100–$500 gigs, no data entry, no under-bidding. The marina SOW is the model: phased, fixed-fee, and governed.
+**Weekly hours (60):** 25 selling (15 Upwork proposals/week + 10 direct outreach), 20 delivery, 10 site and Looms, 5 admin. **Stop building new demos.** The library is already big enough. What's missing is sales activity.
 
-## 4. Positioning
+## 5. Blueprint inventory (existing GitHub repos → site proof)
+
+| Blueprint (site name) | Source repo | Pillar |
+|---|---|---|
+| Lead Pipeline (n8n + Claude + HubSpot) | Upwork-Projects/mvp1, ai-lead-qualifier, ai-ops-portfolio-apps/01 | Automation, Agents |
+| Ops Knowledge Brain (RAG, Supabase pgvector, citations) | Upwork-Projects/mvp2, ai-ops-portfolio-apps/05 | Agents |
+| Document Intake Extractor (leases, invoices, contracts) | Upwork-Projects/mvp3, ai-ops-portfolio-apps/06 | Automation |
+| CRM Follow-Up Suite | Upwork-Projects/mvp4, upwork-portfolio-demos/demo-5 | Integration |
+| AI Ops KPI Dashboard | Upwork-Projects/mvp7, ai-ops-portfolio-apps/07 | Dashboards |
+| Multi-Agent Operations Team | Upwork-Projects/mvp8, aiopsexpert-framework | Agents (scale) |
+| Support & Retention Triage | ai-ops-portfolio-apps/08, upwork-portfolio-demos/demo-4 | Agents |
+| Voice AI Agent | upwork-portfolio-demos/demo-2 | Agents |
+| Email Triage Agent with eval gating (Relevance AI + Make + promptfoo) | Marina SOW design | Agents, Governance |
+
+Each blueprint page shows: the problem, an architecture diagram, the stack, the governance controls, what it would measure, and a 90-second Loom, labeled "Reference build."
+
+Repo hygiene: 82 repos, many archived duplicates (five Content_Creator variants, multiple site versions). Before linking GitHub from Upwork or the site, pin the six blueprint repos and make the duplicates private.
+
+## 6. Positioning
 
 - **Category:** Fractional COO & AI Operations Partner for owner-led service businesses
 - **Headline direction:** "An operator who has scaled companies to $265M, now installing AI that actually runs your operations: measured, controlled, and owned."
@@ -46,7 +75,7 @@ The mistake would be waiting for the AI practice to pay the bills. **Sell the CO
 - **10X:** Claim it only per workflow, measured against the client's own baseline. Never company-wide.
 - Avoid "AIOps," which means IT monitoring to technical buyers.
 
-## 5. What buyers are paying for (demand, ranked)
+## 7. What buyers are paying for (demand, ranked)
 
 | Rank | Productized build | Evidence |
 |---|---|---|
@@ -60,7 +89,7 @@ Every build includes the governance kit: approval matrix, labeled eval set, fail
 
 **First-case-study plan:** Run 2–3 Diagnostics at a reduced fee in exchange for documented baselines, permission to publish results, and a reference call.
 
-## 6. Industry focus
+## 8. Industry focus
 
 | Industry | Credibility | Role |
 |---|---|---|
@@ -70,15 +99,17 @@ Every build includes the governance kit: approval matrix, labeled eval set, fail
 | Seasonal hospitality / booking | Demand signal only | Upwork opportunistic |
 | SaaS / e-commerce / retail | None | Remove from site |
 
-## 7. Website architecture
+## 9. Website architecture
 
 ```
 /                           Operator headline, two ways to work with Daniel, Earned Autonomy diagram, track record, one CTA
-/fractional-coo             Track A: what a fractional engagement covers, AI Diagnostic included, pricing band
+/fractional-coo             Premium offer: fractional operations leadership with AI Diagnostic included
 /method                     AI Ops OS: 4 layers (Govern, Operate, Build, Prove), 5 phases, Green/Yellow/Red tiers
-/solutions/inbound-triage
-/solutions/back-office-intake
-/solutions/knowledge-brain
+/services/ai-readiness
+/services/workflow-automation   (incl. tool integration)
+/services/ai-agents            (build, manage, scale)
+/services/dashboards
+/services/ai-governance
 /blueprints                 Labeled reference builds: architecture diagram, 90-sec Loom, stack, what it would measure
 /industries/healthcare-services
 /industries/property-management
@@ -93,10 +124,6 @@ Design principles: system diagrams, not robots. Show sample deliverables. No ani
 
 **Fix now on the live site:** remove unverifiable stats and testimonials; fix "Most A|", the 0% counters, "Top -18", "-120%", the back links, and the duplicate logo marquee; unify the brand, domain, and email.
 
-## 8. Remaining decisions
+## 10. Next build step
 
-1. Monthly income floor needed within 90 days.
-2. Hours per week available.
-3. Final brand name and domain.
-4. Site platform (Lovable, Webflow, custom).
-5. Are 10+ warm contacts in healthcare services or property management reachable this month?
+Build the site in Lovable from the section 9 sitemap. Order: Home → Blueprints (3 strongest first: Knowledge Brain, Document Intake, Email Triage with eval gating) → Track Record → AI Readiness assessment → Solutions → Industries.
