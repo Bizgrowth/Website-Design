@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import { Atmosphere } from "@/components/interactive/Effects";
 import { MotionProvider, ScrollProgress } from "@/components/interactive/MotionProvider";
+import { MobileCtaBar } from "@/components/MobileCtaBar";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { site } from "@/lib/site";
@@ -27,6 +28,12 @@ export const metadata: Metadata = {
   openGraph: { siteName: site.name, type: "website" },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#0b0c10",
+  colorScheme: "dark",
+  viewportFit: "cover",
+};
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${jakarta.variable} ${jetbrains.variable} h-full antialiased`}>
@@ -39,8 +46,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Atmosphere />
           <ScrollProgress />
           <SiteHeader />
-          <main className="flex-1 pt-20">{children}</main>
+          <main className="flex-1 pt-[calc(5rem+env(safe-area-inset-top))]">{children}</main>
           <SiteFooter />
+          <MobileCtaBar />
         </MotionProvider>
       </body>
     </html>

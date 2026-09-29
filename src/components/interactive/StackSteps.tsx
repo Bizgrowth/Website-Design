@@ -89,7 +89,7 @@ function ConnectVisual({ icons }: { icons: Icons }) {
         animate={{ scale: [1, 1.08, 1] }}
         transition={{ duration: 2.4, repeat: Infinity }}
       >
-        <span className="text-[10px] font-bold">AI</span>
+        <span className="text-[11px] font-bold">AI</span>
       </motion.div>
     </div>
   );
@@ -101,7 +101,7 @@ function EvalVisual() {
     <div className="w-full max-w-[280px] rounded-xl border border-white/10 bg-navy/70 p-4">
       <div className="flex items-center justify-between">
         <p className="text-sm text-white/80">Eval gate</p>
-        <span className="rounded-full bg-ok-soft px-2 py-0.5 text-[10px] font-semibold text-ok">Passed</span>
+        <span className="rounded-full bg-ok-soft px-2 py-0.5 text-[11px] font-semibold text-ok">Passed</span>
       </div>
       <p className="mt-2 font-mono text-4xl font-semibold text-hero-accent">
         {rate}%<span className="ml-2 font-sans text-xs text-white/50">pass rate · floor 85%</span>
@@ -116,7 +116,7 @@ function EvalVisual() {
         />
         <span className="absolute inset-y-0 left-[85%] w-px bg-warn" aria-hidden />
       </div>
-      <dl className="mt-3 grid grid-cols-3 gap-2 font-mono text-[10px] text-white/50">
+      <dl className="mt-3 grid grid-cols-3 gap-2 font-mono text-[11px] text-white/50">
         {[
           ["CASES", "150"],
           ["INTENT", "96%"],
@@ -128,7 +128,7 @@ function EvalVisual() {
           </div>
         ))}
       </dl>
-      <p className="mt-2 text-[10px] text-white/40">Example report · Email Triage blueprint</p>
+      <p className="mt-2 text-[11px] text-white/40">Example report · Email Triage blueprint</p>
     </div>
   );
 }
@@ -151,7 +151,7 @@ function ApproveVisual() {
               onClick={() => setApproved(false)}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="rounded-lg border border-ok/60 bg-ok-soft px-3 py-1.5 text-xs font-semibold text-ok"
+              className="min-h-10 rounded-lg border border-ok/60 bg-ok-soft px-3 py-1.5 text-xs font-semibold text-ok"
               title="Replay"
             >
               ✓ Approved · sent
@@ -163,7 +163,7 @@ function ApproveVisual() {
               onClick={() => setApproved(true)}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="rounded-lg border border-hero-accent px-3 py-1.5 text-xs font-semibold text-white shadow-[0_0_16px_-4px_var(--hero-accent)] hover:bg-white/10"
+              className="min-h-10 rounded-lg border border-hero-accent px-3 py-1.5 text-xs font-semibold text-white shadow-[0_0_16px_-4px_var(--hero-accent)] hover:bg-white/10"
             >
               ✦ Review &amp; approve
             </motion.button>
@@ -184,7 +184,7 @@ function ApproveVisual() {
           </motion.div>
         )}
       </AnimatePresence>
-      {!approved && <p className="mt-2 text-[10px] text-white/40">Try it: click to approve</p>}
+      {!approved && <p className="mt-2 text-[11px] text-white/40">Try it: click to approve</p>}
     </div>
   );
 }

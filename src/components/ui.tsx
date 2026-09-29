@@ -45,7 +45,7 @@ export function SectionHeading({
 export function PageHeader({ eyebrow, title, lead }: { eyebrow: string; title: string; lead?: string }) {
   return (
     <header className="hero-backdrop border-b border-line">
-      <Container className="py-16 sm:py-20">
+      <Container className="py-12 sm:py-20">
         <Eyebrow>{eyebrow}</Eyebrow>
         <h1 className="mt-5 max-w-3xl text-4xl font-bold sm:text-5xl">{title}</h1>
         {lead && <p className="mt-4 max-w-2xl text-lg text-muted">{lead}</p>}
@@ -120,7 +120,7 @@ export function ButtonLink({
   return (
     <Link
       href={href}
-      className={`inline-flex items-center justify-center rounded-xl px-5 py-2.5 text-sm font-semibold transition active:scale-[0.98] ${styles[variant]}`}
+      className={`inline-flex min-h-11 items-center justify-center rounded-xl px-5 py-2.5 text-sm font-semibold transition active:scale-[0.98] ${styles[variant]}`}
     >
       {children}
     </Link>

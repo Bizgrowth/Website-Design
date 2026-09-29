@@ -70,10 +70,10 @@ export default function Home() {
       </section>
 
       {/* 2 · Operator proof: zoom-in portrait, flip cards with the story behind each number */}
-      <section className="py-16 sm:py-20">
-        <Container className="grid items-center gap-10 lg:grid-cols-[280px_1fr]">
-          <ZoomIn>
-            <Portrait size={280} />
+      <section className="py-12 sm:py-20">
+        <Container className="grid items-center gap-8 md:grid-cols-[200px_1fr] lg:grid-cols-[280px_1fr] lg:gap-10">
+          <ZoomIn className="w-36 sm:w-48 md:w-full">
+            <Portrait size={280} className="h-auto w-full" />
           </ZoomIn>
           <div>
             <Reveal>
@@ -81,7 +81,7 @@ export default function Home() {
               <h2 className="mt-4 text-3xl font-bold sm:text-4xl">AI is new. Running operations isn&apos;t.</h2>
               <p className="mt-3 max-w-2xl text-muted">{site.intro}</p>
             </Reveal>
-            <Stagger className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4">
+            <Stagger className="mt-8 grid grid-cols-2 gap-3 lg:grid-cols-4">
               {trackRecord.headline.map((h) => (
                 <FlipCard
                   key={h.label}
@@ -91,7 +91,7 @@ export default function Home() {
                       <p className="text-2xl font-bold tabular-nums">{h.value}</p>
                       <div>
                         <p className="text-xs text-muted">{h.label}</p>
-                        <p className="mt-2 font-mono text-[10px] uppercase tracking-wider text-hero-accent">The story ↻</p>
+                        <p className="mt-2 font-mono text-[11px] uppercase tracking-wider text-hero-accent">The story ↻</p>
                       </div>
                     </>
                   }
@@ -99,13 +99,13 @@ export default function Home() {
                 />
               ))}
             </Stagger>
-            <Link href="/about" className="mt-5 inline-block text-sm font-semibold text-accent">Meet Daniel →</Link>
+            <Link href="/about" className="mt-3 inline-flex min-h-11 items-center text-sm font-semibold text-accent">Meet Daniel →</Link>
           </div>
         </Container>
       </section>
 
       {/* 4 · Hub pillars */}
-      <section className="border-y border-line bg-white/[0.015] py-16 sm:py-20">
+      <section className="border-y border-line bg-white/[0.015] py-12 sm:py-20">
         <Container>
           <Reveal>
             <SectionHeading
@@ -134,7 +134,7 @@ export default function Home() {
       <ConnectedStack />
 
       {/* 5 · Earned Autonomy, scroll-driven */}
-      <section className="py-16 sm:py-24">
+      <section className="py-12 sm:py-24">
         <Container>
           <Reveal>
             <SectionHeading
@@ -148,7 +148,7 @@ export default function Home() {
       </section>
 
       {/* 6 · Blueprint rail */}
-      <section className="border-y border-line bg-white/[0.015] py-16 sm:py-20">
+      <section className="border-y border-line bg-white/[0.015] py-12 sm:py-20">
         <Container>
           <Reveal>
             <SectionHeading
@@ -163,7 +163,7 @@ export default function Home() {
       </section>
 
       {/* 7 · Install process */}
-      <section className="py-16 sm:py-24">
+      <section className="py-12 sm:py-24">
         <Container className="grid gap-10 lg:grid-cols-[1fr_1.3fr]">
           <Reveal className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>How an install runs</Eyebrow>
@@ -181,7 +181,7 @@ export default function Home() {
       </section>
 
       {/* 8 · SMB AI Daily */}
-      <section className="border-y border-line bg-white/[0.015] py-16 sm:py-20">
+      <section className="border-y border-line bg-white/[0.015] py-12 sm:py-20">
         <Container>
           <Reveal>
             <SectionHeading
@@ -200,7 +200,7 @@ export default function Home() {
       </section>
 
       {/* 9 · Offer ladder */}
-      <section className="py-16 sm:py-24">
+      <section className="py-12 sm:py-24">
         <Container>
           <Reveal>
             <SectionHeading
@@ -215,7 +215,7 @@ export default function Home() {
       </section>
 
       {/* 10 · FAQ */}
-      <section className="border-t border-line bg-white/[0.015] py-16 sm:py-20">
+      <section className="border-t border-line bg-white/[0.015] py-12 sm:py-20">
         <Container className="grid gap-10 lg:grid-cols-[1fr_2fr]">
           <Reveal>
             <Eyebrow>FAQ</Eyebrow>

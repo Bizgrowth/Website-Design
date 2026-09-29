@@ -7,7 +7,7 @@ import { Container } from "./ui";
 export function SiteFooter() {
   return (
     <footer className="mt-auto border-t border-line bg-surface">
-      <Container className="grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-4">
+      <Container className="grid gap-8 py-12 pb-[max(3rem,env(safe-area-inset-bottom))] sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <p className="font-bold">{site.name}</p>
           <p className="mt-2 text-sm text-muted">{site.tagline}</p>
@@ -37,10 +37,10 @@ function FooterCol({ title, links }: { title: string; links: { href: string; lab
   return (
     <div>
       <p className="text-xs font-semibold uppercase tracking-wider text-faint">{title}</p>
-      <ul className="mt-3 space-y-2 text-sm">
+      <ul className="mt-2 text-sm">
         {links.map((l) => (
           <li key={l.href}>
-            <Link href={l.href} className="text-muted hover:text-ink">{l.label}</Link>
+            <Link href={l.href} className="inline-flex min-h-10 items-center text-muted hover:text-ink">{l.label}</Link>
           </li>
         ))}
       </ul>

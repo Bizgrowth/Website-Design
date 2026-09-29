@@ -250,7 +250,7 @@ h3 {
 /* Fixed atmospheric light streaks behind every page. */
 .atmosphere {
   position: fixed;
-  inset: 0;
+  inset: -10vh 0 -40vh 0;
   z-index: -1;
   pointer-events: none;
   background:
@@ -436,4 +436,31 @@ h3 {
   .btn-flare::after {
     display: none;
   }
+}
+
+/* ---------- Touch devices, phones and tablets ---------- */
+
+/* Frosted blur on dozens of cards is expensive on phones; use a solid tint there. */
+@media (max-width: 767px) {
+  .bg-surface {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: rgba(18, 19, 24, 0.92);
+  }
+}
+
+/* No sticky hover states or 300ms tap delay on touch screens. */
+@media (hover: none) {
+  .btn-flare:hover,
+  .btn-ghost:hover {
+    transform: none;
+  }
+  .btn-flare::after {
+    display: none;
+  }
+}
+html {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  touch-action: manipulation;
 }

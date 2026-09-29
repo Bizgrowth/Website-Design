@@ -45,7 +45,7 @@ export default async function ServicePage(props: PageProps<"/services/[slug]">) 
             <li>An approval matrix: what AI does alone and what needs sign-off.</li>
             <li>A failure playbook for wrong outputs and outages.</li>
           </ul>
-          <Link href="/method" className="mt-5 inline-block text-sm font-semibold text-accent">The Earned Autonomy method →</Link>
+          <Link href="/method" className="mt-3 inline-flex min-h-11 items-center text-sm font-semibold text-accent">The Earned Autonomy method →</Link>
         </div>
       </Container>
       {related.length > 0 && (

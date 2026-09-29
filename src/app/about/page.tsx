@@ -19,9 +19,9 @@ export default function AboutPage() {
   return (
     <PageTransition>
       <section className="border-b border-line bg-white/[0.015]">
-        <Container className="grid items-center gap-10 py-14 md:grid-cols-[320px_1fr]">
-          <ZoomIn>
-            <Portrait size={320} />
+        <Container className="grid items-center gap-8 py-12 sm:py-14 md:grid-cols-[260px_1fr] lg:grid-cols-[320px_1fr] lg:gap-10">
+          <ZoomIn className="w-44 sm:w-60 md:w-full">
+            <Portrait size={320} className="h-auto w-full" />
           </ZoomIn>
           <Reveal delay={0.1}>
             <Eyebrow>About</Eyebrow>

@@ -22,7 +22,7 @@ export default async function UpdatePage(props: PageProps<"/updates/[slug]">) {
   return (
     <PageTransition>
       <Container className="py-12 sm:py-16">
-        <Link href="/updates" className="text-sm text-muted hover:text-ink">← SMB AI Daily</Link>
+        <Link href="/updates" className="inline-flex min-h-11 items-center text-sm text-muted hover:text-ink">← SMB AI Daily</Link>
         <time dateTime={u.date} className="mt-6 block text-sm font-semibold text-faint">{formatDate(u.date)}</time>
         <h1 className="mt-2 max-w-3xl text-3xl font-bold sm:text-4xl">{u.title}</h1>
         <div className="mt-4"><PillarTags pillars={u.pillars} /></div>

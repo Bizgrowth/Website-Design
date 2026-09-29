@@ -19,15 +19,15 @@ export default function ContactPage() {
         title="Book a 30-minute operations call"
         lead="Bring one workflow that eats your team's time. We'll look at whether AI is the right fix and what it would take."
       />
-      <Container className="grid gap-8 py-14 lg:grid-cols-[300px_1fr]">
-        <aside className="space-y-5">
-          <Portrait size={300} />
+      <Container className="grid gap-6 py-10 sm:py-14 lg:grid-cols-[300px_1fr] lg:gap-8">
+        <aside className="order-2 space-y-5 lg:order-1">
+          <Portrait size={300} className="hidden h-auto w-full lg:block" />
           <div className="rounded-2xl border border-line bg-surface p-5">
             <Eyebrow>Reach Daniel directly</Eyebrow>
             <ContactDetails className="mt-3" />
           </div>
         </aside>
-        <div className="relative overflow-hidden rounded-2xl border border-line bg-surface">
+        <div className="relative order-1 overflow-hidden rounded-2xl border border-line bg-surface lg:order-2">
           {/* Shimmer placeholder until the Calendly iframe paints over it */}
           <div aria-hidden className="absolute inset-0 space-y-4 p-8">
             <div className="skeleton h-8 w-1/2 rounded-lg" />

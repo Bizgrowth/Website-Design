@@ -23,7 +23,7 @@ export default async function BlueprintPage(props: PageProps<"/blueprints/[slug]
     <PageTransition>
       <header className="hero-backdrop border-b border-line">
         <Container className="py-12 sm:py-16">
-          <Link href="/blueprints" className="text-sm text-muted hover:text-ink">← All blueprints</Link>
+          <Link href="/blueprints" className="inline-flex min-h-11 items-center text-sm text-muted hover:text-ink">← All blueprints</Link>
           <div className="mt-5 flex flex-wrap gap-1.5">
             <ReferenceBuildTag />
             <Tag>{b.industry}</Tag>

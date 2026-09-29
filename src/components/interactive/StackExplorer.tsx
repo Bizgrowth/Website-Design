@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { BrandIcon } from "@/components/BrandIcon";
 import type { Category, Integration } from "@/lib/integrations";
 
@@ -20,17 +20,26 @@ export function StackExplorer({
   const [filter, setFilter] = useState<Category | "All">("All");
   const [selected, setSelected] = useState(integrations[0].name);
   const current = integrations.find((i) => i.name === selected) ?? integrations[0];
+  const panel = useRef<HTMLDivElement>(null);
+
+  // On phones the detail panel sits below the grid, so bring it into view after a tap.
+  const select = (name: string) => {
+    setSelected(name);
+    if (window.matchMedia("(max-width: 767px)").matches) {
+      requestAnimationFrame(() => panel.current?.scrollIntoView({ behavior: "smooth", block: "nearest" }));
+    }
+  };
 
   return (
     <div>
-      <div className="flex flex-wrap gap-2" role="group" aria-label="Filter tools by category">
+      <div className="rail -mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0" role="group" aria-label="Filter tools by category">
         {(["All", ...categories] as const).map((c) => (
           <button
             key={c}
             type="button"
             aria-pressed={filter === c}
             onClick={() => setFilter(c)}
-            className={`rounded-full border px-3.5 py-1.5 text-xs font-semibold transition ${
+            className={`h-10 shrink-0 rounded-full border px-4 text-xs font-semibold transition ${
               filter === c ? "border-white bg-white text-navy" : "border-white/15 text-white/70 hover:border-white/40 hover:text-white"
             }`}
           >
@@ -39,11 +48,11 @@ export function StackExplorer({
         ))}
       </div>
 
-      <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_360px]">
+      <div className="mt-8 grid gap-6 md:grid-cols-[1fr_300px] lg:grid-cols-[1fr_360px] lg:gap-8">
         <div className="relative">
           {/* Glowing orb behind the grid */}
-          <div aria-hidden className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full orb" />
-          <ul className="relative grid grid-cols-4 gap-3 sm:grid-cols-6 lg:grid-cols-6">
+          <div aria-hidden className="pointer-events-none absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 sm:h-[420px] sm:w-[420px] -translate-y-1/2 rounded-full orb" />
+          <ul className="relative grid grid-cols-6 gap-2 sm:gap-3 md:grid-cols-4 lg:grid-cols-6">
             {integrations.map((tool) => {
               const dim = filter !== "All" && tool.category !== filter;
               const active = tool.name === current.name;
@@ -51,16 +60,16 @@ export function StackExplorer({
                 <li key={tool.name}>
                   <button
                     type="button"
-                    onClick={() => setSelected(tool.name)}
+                    onClick={() => select(tool.name)}
                     aria-pressed={active}
                     aria-label={`${tool.name}, ${tool.category}`}
-                    className={`group grid aspect-square w-full place-items-center rounded-2xl border backdrop-blur transition duration-300 ${
+                    className={`group grid aspect-square w-full min-h-11 place-items-center rounded-xl border backdrop-blur sm:rounded-2xl transition duration-300 ${
                       active
                         ? "scale-105 border-hero-accent bg-white/10 shadow-[0_0_32px_-4px_var(--hero-accent)]"
                         : "border-white/10 bg-black/40 hover:-translate-y-1 hover:border-white/30"
                     } ${dim ? "opacity-25" : "opacity-100"}`}
                   >
-                    <BrandIcon icon={tool.icon} label={tool.name} size={30} />
+                    <BrandIcon icon={tool.icon} label={tool.name} size={26} />
                   </button>
                 </li>
               );
@@ -70,12 +79,13 @@ export function StackExplorer({
 
         <AnimatePresence mode="wait">
           <motion.div
+            ref={panel}
             key={current.name}
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.25 }}
-            className="self-start rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur"
+            className="scroll-mt-24 self-start rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur"
             aria-live="polite"
           >
             <div className="flex items-center gap-3">
@@ -110,7 +120,7 @@ export function StackExplorer({
                 <ul className="mt-2 space-y-1.5 text-sm">
                   {current.blueprints.map((slug) => (
                     <li key={slug}>
-                      <Link href={`/blueprints/${slug}`} className="text-hero-accent hover:underline">
+                      <Link href={`/blueprints/${slug}`} className="inline-flex min-h-10 items-center text-hero-accent hover:underline">
                         {blueprintTitles[slug] ?? slug} →
                       </Link>
                     </li>
