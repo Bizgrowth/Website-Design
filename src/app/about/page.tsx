@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ContactDetails } from "@/components/ContactDetails";
 import { CtaBand } from "@/components/CtaBand";
-import { Container, PageHeader } from "@/components/ui";
+import { Reveal } from "@/components/interactive/Reveal";
+import { Portrait } from "@/components/Portrait";
+import { Container, Eyebrow } from "@/components/ui";
+import { site } from "@/lib/site";
+import { trackRecord } from "@/lib/track-record";
 
 export const metadata: Metadata = {
   title: "About Daniel Schley",
@@ -11,30 +16,45 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <PageHeader
-        eyebrow="About"
-        title="Daniel Schley"
-        lead="Founder of AI Operations Expert. Twenty years as an operating executive before AI — which is exactly why the AI works."
-      />
-      <Container className="py-14">
+      <section className="border-b border-line bg-surface">
+        <Container className="grid items-center gap-10 py-14 md:grid-cols-[320px_1fr]">
+          <Reveal>
+            <Portrait size={320} />
+          </Reveal>
+          <Reveal delay={0.1}>
+            <Eyebrow>About</Eyebrow>
+            <h1 className="mt-3 text-4xl font-bold sm:text-5xl">{site.owner}</h1>
+            <p className="mt-2 text-lg font-medium text-muted">Founder, {site.name} · Former COO</p>
+            <p className="mt-5 max-w-2xl text-lg">{site.intro}</p>
+            <ContactDetails className="mt-6" />
+          </Reveal>
+        </Container>
+      </section>
+      <Container className="grid gap-12 py-14 lg:grid-cols-[1fr_320px]">
         <div className="prose">
           <p>
-            I spent two decades running operations: building a workers&apos; compensation rehab network from zero to $265M,
-            leading an exit at 12X EBITDA, and serving as COO of a $1B real estate platform. Managed care taught me that
-            the right answer is a system — tiered approvals, clear thresholds, audit trails, and quality measured every month.
+            Managed care taught me that the right answer is a system — tiered approvals, clear thresholds, audit trails,
+            and quality measured every month. AI needs exactly that system, and most SMBs don&apos;t have it. They buy tools,
+            run a pilot, and stall because no one owns the workflow, no one measured the before, and no one planned for
+            mistakes.
           </p>
           <p>
-            AI needs exactly that system, and most SMBs don&apos;t have it. They buy tools, run a pilot, and stall because no one
-            owns the workflow, no one measured the before, and no one planned for mistakes.
+            This hub is where I share what works: blueprints you can inspect, daily updates in plain language, and a
+            method — Earned Autonomy — that lets AI take on more work only as it proves itself.
           </p>
           <p>
-            This hub is where I share what works: blueprints you can inspect, daily updates in plain language, and a method —
-            Earned Autonomy — that lets AI take on more work only as it proves itself.
-          </p>
-          <p>
-            <Link href="/track-record">See the full track record</Link> or <Link href="/contact">get in touch</Link>.
+            <Link href="/track-record">See the full track record</Link> or{" "}
+            <a href={site.bookingUrl}>book a 30-minute call</a>.
           </p>
         </div>
+        <dl className="grid grid-cols-2 gap-3 self-start">
+          {trackRecord.headline.map((h) => (
+            <div key={h.label} className="rounded-xl border border-line bg-surface p-4">
+              <dt className="text-xl font-bold tabular-nums">{h.value}</dt>
+              <dd className="mt-1 text-xs text-muted">{h.label}</dd>
+            </div>
+          ))}
+        </dl>
       </Container>
       <CtaBand />
     </>

@@ -61,6 +61,7 @@
   --color-risk: var(--risk);
   --color-risk-soft: var(--risk-soft);
   --color-navy: var(--navy);
+  --color-hero-accent: var(--hero-accent);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -161,4 +162,110 @@ h3 {
 .prose th {
   font-weight: 650;
   color: var(--muted);
+}
+
+/* ---------- Motion & interactive visuals ---------- */
+
+:root {
+  --glow-a: rgba(56, 118, 255, 0.35);
+  --glow-b: rgba(47, 211, 154, 0.18);
+  --grid-line: rgba(255, 255, 255, 0.06);
+  --hero-accent: #7fb0ff;
+}
+
+/* Dark hero backdrop: soft glows over a faint grid. */
+.hero-backdrop {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.hero-backdrop::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(600px 380px at 78% 20%, var(--glow-a), transparent 70%),
+    radial-gradient(520px 320px at 10% 90%, var(--glow-b), transparent 70%);
+}
+.hero-backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at 50% 30%, black 30%, transparent 75%);
+}
+
+/* Infinite tool strip. The second copy is aria-hidden. */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+.marquee {
+  mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+}
+
+/* Cursor-following highlight on cards (position set by SpotlightCard). */
+.spotlight {
+  position: relative;
+  overflow: hidden;
+}
+.spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s;
+  background: radial-gradient(360px circle at var(--mx, 50%) var(--my, 50%), var(--accent-soft), transparent 60%);
+}
+.spotlight:hover::before {
+  opacity: 1;
+}
+.spotlight > * {
+  position: relative;
+}
+
+/* Horizontal blueprint rail. */
+.rail {
+  scrollbar-width: none;
+}
+.rail::-webkit-scrollbar {
+  display: none;
+}
+
+/* FAQ disclosure marker. */
+.faq summary {
+  list-style: none;
+  cursor: pointer;
+}
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+.faq summary .faq-icon {
+  transition: transform 0.2s;
+}
+.faq[open] summary .faq-icon {
+  transform: rotate(45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
 }

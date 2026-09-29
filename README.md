@@ -43,3 +43,17 @@ Copy an existing file in the same folder and change the top section (between the
 - `src/lib/track-record.ts`: verified executive results
 - `src/app/`: pages
 - `src/components/`: shared UI
+
+## Help for adding content (for Daniel)
+
+You don't need to edit files by hand. In Claude Code, open this repo and say what you want in plain English, for example:
+
+- "Add a blueprint for my invoice bot. Here's the Loom and the repo: …"
+- "Post an update about this article: <link>"
+- "Change my phone number" or "Update my bio"
+
+Claude uses the `add-content` skill: it writes the page, checks it, and opens a pull request. You review it and click **Merge**.
+
+**Your photo:** upload a square headshot to `public/images/daniel-schley.jpg`. In GitHub: open the repo → `public/images` → **Add file → Upload files**. It appears on the home, About, and Contact pages automatically.
+
+**SMB AI Daily** runs automatically each weekday morning. It drafts one sourced update and opens a pull request titled "SMB AI Daily — …". Merge to publish, or close it to skip that day.

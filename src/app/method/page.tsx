@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { CtaBand } from "@/components/CtaBand";
 import { EarnedAutonomy } from "@/components/EarnedAutonomy";
+import { ProcessTimeline } from "@/components/interactive/ProcessTimeline";
 import { Container, PageHeader, SectionHeading } from "@/components/ui";
+import { phases } from "@/lib/phases";
 
 export const metadata: Metadata = {
   title: "The Earned Autonomy Method",
@@ -13,14 +15,6 @@ const layers = [
   { name: "Operate", body: "Documented processes, handoffs, exception paths, and failure playbooks. AI goes on clean processes, never broken ones." },
   { name: "Build", body: "The automations and agents themselves — Make, n8n, Claude, your CRM. Tool-agnostic so the system outlives any vendor." },
   { name: "Prove", body: "Baselines, a KPI scorecard, quality sampling, and a monthly AI operations review." },
-];
-
-const phases = [
-  { name: "Align", time: "Weeks 1–2", body: "Leadership interview, readiness score, shadow-AI inventory, top-10 workflow list." },
-  { name: "Map", time: "Weeks 2–3", body: "Document the three highest-value workflows and capture baselines." },
-  { name: "Govern", time: "Weeks 3–4", body: "Assign owners, set risk tiers, build the approval matrix and failure playbook — before building." },
-  { name: "Deploy", time: "Weeks 4–8", body: "Build against the rules. Run in parallel with the human process until quality thresholds are met." },
-  { name: "Optimize", time: "Ongoing", body: "Monthly review of KPIs, exceptions, and cost. Promote workflows from Yellow to Green as they earn it." },
 ];
 
 export default function MethodPage() {
@@ -53,18 +47,7 @@ export default function MethodPage() {
 
       <Container className="py-14">
         <SectionHeading eyebrow="Five phases" title="How an install runs" />
-        <ol className="space-y-3">
-          {phases.map((p, i) => (
-            <li key={p.name} className="grid gap-2 rounded-2xl border border-line bg-surface p-5 sm:grid-cols-[48px_160px_1fr] sm:items-center">
-              <span className="grid h-9 w-9 place-items-center rounded-full bg-navy text-sm font-bold text-white">{i + 1}</span>
-              <div>
-                <p className="font-bold">{p.name}</p>
-                <p className="text-xs text-faint">{p.time}</p>
-              </div>
-              <p className="text-sm text-muted">{p.body}</p>
-            </li>
-          ))}
-        </ol>
+        <ProcessTimeline phases={phases} />
         <p className="mt-8 max-w-2xl text-sm text-muted">
           On efficiency claims: we target large gains on specific workflows, measured against your own baseline — never a
           company-wide multiplier we can&apos;t show you the math for.

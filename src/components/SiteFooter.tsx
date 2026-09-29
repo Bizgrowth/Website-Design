@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { pillars, services } from "@/lib/taxonomy";
+import { ContactDetails } from "./ContactDetails";
 import { Container } from "./ui";
 
 export function SiteFooter() {
@@ -10,6 +11,7 @@ export function SiteFooter() {
         <div>
           <p className="font-bold">{site.name}</p>
           <p className="mt-2 text-sm text-muted">{site.tagline}</p>
+          <ContactDetails className="mt-4" />
         </div>
         <FooterCol title="AI Hub" links={pillars.map((p) => ({ href: `/hub/${p.slug}`, label: p.name }))} />
         <FooterCol title="Services" links={services.map((s) => ({ href: `/services/${s.slug}`, label: s.name }))} />
@@ -25,10 +27,7 @@ export function SiteFooter() {
       </Container>
       <Container className="flex flex-col gap-2 border-t border-line py-6 text-xs text-faint sm:flex-row sm:justify-between">
         <p>© {new Date().getFullYear()} {site.name}. Blueprints are labeled reference builds unless stated otherwise.</p>
-        <p>
-          <a href={site.linkedin} className="hover:text-ink">LinkedIn</a> ·{" "}
-          <a href={site.github} className="hover:text-ink">GitHub</a>
-        </p>
+        <p>Jacksonville, FL · Serving clients remotely</p>
       </Container>
     </footer>
   );
