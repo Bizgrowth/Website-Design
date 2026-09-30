@@ -3,6 +3,7 @@ import { Fragment_Mono, Inter } from "next/font/google";
 import localFont from "next/font/local";
 import { Atmosphere } from "@/components/interactive/Effects";
 import { MotionProvider, ScrollProgress } from "@/components/interactive/MotionProvider";
+import { ChatWidget } from "@/components/ChatWidget";
 import { MobileCtaBar } from "@/components/MobileCtaBar";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -63,6 +64,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <main className="flex-1 pt-[calc(5rem+env(safe-area-inset-top))]">{children}</main>
           <SiteFooter />
           <MobileCtaBar />
+          <ChatWidget />
         </MotionProvider>
       </body>
     </html>

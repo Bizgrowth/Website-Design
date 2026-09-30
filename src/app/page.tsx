@@ -45,17 +45,18 @@ export default function Home() {
                   <Eyebrow>The SMB hub for AI operations</Eyebrow>
                 </Reveal>
                 <h1 className="mt-6 text-[2.6rem] font-semibold leading-[1.05] tracking-tight sm:text-6xl xl:text-[4rem]">
-                  <WordCascade text="AI that runs your operations —" delay={0.1} />{" "}
-                  <WordCascade text="measured, controlled, and owned." delay={0.45} className="text-flare-gradient" />
+                  <WordCascade text="AI can't run" delay={0.1} />{" "}
+                  <WordCascade text="what isn't written down." delay={0.45} className="text-flare-gradient" />
                 </h1>
                 <Reveal delay={0.7}>
                   <p className="mt-6 max-w-xl text-lg text-white/70">
-                    Blueprints, daily updates, and hands-on help with AI automation, integration, and implementation —
-                    from an operator who scaled a company from $0 to $265M.
+                    Most AI projects stall on the same three gaps: undocumented workflows, missing SOPs, and data locked in
+                    silos. I find them, fix them, then automate what&apos;s left, so AI gives you back time, margin, and room
+                    to scale. From an operator who scaled a company from $0 to $265M.
                   </p>
                   <div className="mt-8 flex flex-wrap gap-3">
-                    <ButtonLink href={site.bookingUrl}>Book an Ops Call</ButtonLink>
-                    <ButtonLink href="/blueprints" variant="secondary">See the blueprints</ButtonLink>
+                    <ButtonLink href="/assessment">Get your AI Readiness Assessment</ButtonLink>
+                    <ButtonLink href="/method" variant="secondary">See how it works</ButtonLink>
                   </div>
                 </Reveal>
               </>

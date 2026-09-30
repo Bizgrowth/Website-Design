@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 import { pillars, services } from "@/lib/taxonomy";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPaths = ["", "/hub", "/blueprints", "/updates", "/services", "/method", "/track-record", "/fractional-coo", "/about", "/contact"];
+  const staticPaths = ["", "/hub", "/blueprints", "/updates", "/services", "/assessment", "/method", "/track-record", "/fractional-coo", "/about", "/contact"];
   const paths = [
     ...staticPaths,
     ...pillars.map((p) => `/hub/${p.slug}`),
