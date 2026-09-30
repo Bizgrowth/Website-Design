@@ -29,7 +29,7 @@ export default function HubPage() {
             const count = (list: { pillars: string[] }[]) => list.filter((x) => x.pillars.includes(p.slug)).length;
             return (
               <Card key={p.slug} href={`/hub/${p.slug}`} className="flex flex-col">
-                <h2 className="text-xl font-bold">{p.name}</h2>
+                <h2 className="text-xl font-medium">{p.name}</h2>
                 <p className="mt-2 text-sm font-medium">{p.question}</p>
                 <p className="mt-2 flex-1 text-sm text-muted">{p.summary}</p>
                 <p className="mt-5 text-xs text-faint">

@@ -16,7 +16,7 @@ export function ConnectedStack() {
       <Container>
         <Reveal>
           <Eyebrow tone="flare">Your tool stack, connected</Eyebrow>
-          <h2 className="mt-4 max-w-3xl text-3xl font-bold sm:text-4xl">
+          <h2 className="mt-4 max-w-3xl text-3xl font-medium sm:text-4xl">
             AI that works inside the tools you already pay for
           </h2>
           <p className="mt-3 max-w-2xl text-white/60">

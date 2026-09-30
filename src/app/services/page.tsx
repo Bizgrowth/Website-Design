@@ -28,7 +28,7 @@ export default function ServicesPage() {
           {ladder.map((l) => (
             <li key={l.step} className="rounded-2xl border border-line bg-surface p-6">
               <span className="grid h-8 w-8 place-items-center rounded-full border border-accent/50 bg-accent-soft text-sm font-bold text-accent">{l.step}</span>
-              <h2 className="mt-3 font-bold">{l.name}</h2>
+              <h2 className="mt-3 font-medium">{l.name}</h2>
               <p className="mt-2 text-sm text-muted">{l.body}</p>
             </li>
           ))}
@@ -37,14 +37,14 @@ export default function ServicesPage() {
         <div className="mt-14 grid gap-4 md:grid-cols-2">
           {services.map((s) => (
             <Card key={s.slug} href={`/services/${s.slug}`}>
-              <h2 className="text-xl font-bold">{s.name}</h2>
+              <h2 className="text-xl font-medium">{s.name}</h2>
               <p className="mt-2 font-medium">{s.outcome}</p>
               <p className="mt-2 text-sm text-muted">{s.summary}</p>
             </Card>
           ))}
           <Card href="/fractional-coo" className="border-dashed">
             <Eyebrow>Premium</Eyebrow>
-            <h2 className="mt-2 text-xl font-bold">Fractional COO</h2>
+            <h2 className="mt-2 text-xl font-medium">Fractional COO</h2>
             <p className="mt-2 text-sm text-muted">Part-time senior operations leadership with AI built into the operating plan.</p>
           </Card>
         </div>

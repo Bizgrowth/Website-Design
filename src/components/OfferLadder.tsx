@@ -14,7 +14,7 @@ export function OfferLadder() {
             }`}
           >
             <p className="text-xs font-semibold uppercase tracking-wider text-faint">Step {i + 1}</p>
-            <h3 className="mt-2 text-xl font-bold">{o.name}</h3>
+            <h3 className="mt-2 text-xl font-semibold">{o.name}</h3>
             <p className="mt-4 text-3xl font-bold">{o.price}</p>
             <p className="text-sm text-muted">{o.cadence}</p>
             <p className="mt-4 text-sm">{o.body}</p>

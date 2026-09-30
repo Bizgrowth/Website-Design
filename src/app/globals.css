@@ -2,27 +2,28 @@
 
 /* Design tokens. Light is default; dark follows the OS. */
 :root {
-  /* Obsidian Flare (Google Stitch design system). Dark only. */
+  /* Fusion AI (Framer template) palette. Dark only. */
   color-scheme: dark;
-  --bg: #0b0c10;
-  --surface: rgba(18, 19, 24, 0.72);
-  --surface-2: rgba(255, 255, 255, 0.05);
-  --border: rgba(255, 255, 255, 0.09);
-  --ink: #f3f4f6;
-  --muted: #9ba3af;
-  --faint: #6b7280;
-  --accent: #3aa8ff;
-  --accent-soft: rgba(0, 145, 255, 0.12);
+  --bg: #000000;
+  --surface: rgba(25, 25, 25, 0.7);
+  --surface-2: rgba(255, 255, 255, 0.04);
+  --border: rgba(255, 255, 255, 0.1);
+  --ink: #ffffff;
+  --muted: rgba(255, 255, 255, 0.66);
+  --faint: rgba(255, 255, 255, 0.42);
+  --accent: #0099ff;
+  --accent-soft: rgba(0, 153, 255, 0.12);
   --on-accent: #ffffff;
-  --flare: #ff6b00;
-  --flare-soft: rgba(255, 107, 0, 0.12);
-  --ok: #2fd39a;
-  --ok-soft: rgba(47, 211, 154, 0.12);
-  --warn: #ffb65c;
-  --warn-soft: rgba(255, 150, 60, 0.13);
-  --risk: #ff6b73;
-  --risk-soft: rgba(255, 107, 115, 0.12);
-  --navy: #07080c;
+  --flare: #da4e24;
+  --flare-soft: rgba(218, 78, 36, 0.14);
+  --ember: #ff8918;
+  --ok: #34d399;
+  --ok-soft: rgba(52, 211, 153, 0.12);
+  --warn: #ff8918;
+  --warn-soft: rgba(255, 137, 24, 0.13);
+  --risk: #ff5a4e;
+  --risk-soft: rgba(255, 90, 78, 0.12);
+  --navy: #000000;
 }
 
 @theme inline {
@@ -46,8 +47,10 @@
   --color-risk-soft: var(--risk-soft);
   --color-navy: var(--navy);
   --color-hero-accent: var(--hero-accent);
-  --font-sans: var(--font-jakarta);
-  --font-mono: var(--font-jetbrains);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-label);
+  --color-ember: var(--ember);
 }
 
 body {
@@ -57,9 +60,11 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
+  font-family: var(--font-display), var(--font-body), sans-serif;
   text-wrap: balance;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }
 
 /* Long-form content rendered from Markdown. */
@@ -106,7 +111,7 @@ h3 {
   font-weight: 650;
 }
 .prose code {
-  font-family: var(--font-jetbrains);
+  font-family: var(--font-label);
   font-size: 0.9em;
   background: var(--surface-2);
   padding: 0.1em 0.35em;
@@ -151,10 +156,10 @@ h3 {
 /* ---------- Motion & interactive visuals ---------- */
 
 :root {
-  --glow-a: rgba(20, 147, 255, 0.28);
-  --glow-b: rgba(254, 107, 0, 0.16);
-  --grid-line: rgba(255, 255, 255, 0.05);
-  --hero-accent: #00d2ff;
+  --glow-a: rgba(0, 153, 255, 0.22);
+  --glow-b: rgba(218, 78, 36, 0.28);
+  --grid-line: rgba(255, 255, 255, 0.035);
+  --hero-accent: #33adff;
 }
 
 /* Dark hero backdrop: soft glows over a faint grid. */
@@ -169,20 +174,12 @@ h3 {
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(600px 380px at 78% 20%, var(--glow-a), transparent 70%),
-    radial-gradient(520px 320px at 10% 90%, var(--glow-b), transparent 70%);
-  mask-image: linear-gradient(to bottom, black 65%, transparent);
+    radial-gradient(700px 420px at 85% 10%, var(--glow-a), transparent 70%),
+    radial-gradient(620px 420px at 0% 100%, var(--glow-b), transparent 70%);
+  mask-image: linear-gradient(to bottom, black 70%, transparent);
 }
 .hero-backdrop::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background-image:
-    linear-gradient(var(--grid-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-  background-size: 48px 48px;
-  mask-image: radial-gradient(ellipse at 50% 30%, black 30%, transparent 75%);
+  content: none;
 }
 
 
@@ -254,10 +251,8 @@ h3 {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 80% 50% at 75% 20%, rgba(20, 147, 255, 0.16), transparent 70%),
-    radial-gradient(circle at 12% 65%, rgba(254, 107, 0, 0.12), transparent 60%),
-    radial-gradient(circle at 88% 80%, rgba(0, 210, 255, 0.1), transparent 50%),
-    linear-gradient(125deg, transparent 30%, rgba(254, 107, 0, 0.07) 42%, rgba(20, 147, 255, 0.09) 48%, rgba(0, 210, 255, 0.12) 50%, rgba(20, 147, 255, 0.05) 54%, transparent 65%);
+    radial-gradient(ellipse 60% 40% at 92% 12%, rgba(0, 120, 255, 0.1), transparent 70%),
+    radial-gradient(ellipse 50% 45% at 0% 70%, rgba(218, 78, 36, 0.1), transparent 70%);
 }
 
 /* Frosted glass panels. Any element using the surface token gets the blur. */
@@ -273,27 +268,30 @@ h3 {
 
 /* Logo mark: cyan-to-amber orb. */
 .orb-glow {
-  background: radial-gradient(circle at 35% 35%, #00d2ff 0%, #0060ab 50%, #fe6b00 100%);
-  box-shadow: 0 0 18px rgba(0, 210, 255, 0.5), inset 0 0 8px rgba(255, 255, 255, 0.6);
+  background: radial-gradient(circle at 35% 35%, #7fd0ff 0%, #0099ff 40%, #0b3d91 70%, #da4e24 100%);
+  box-shadow: 0 0 18px rgba(0, 153, 255, 0.55), inset 0 0 8px rgba(255, 255, 255, 0.55);
 }
 
 /* Primary action: volumetric amber. */
 .btn-flare {
-  background: linear-gradient(135deg, #ff7a1a, #e05300);
+  background:
+    linear-gradient(180deg, #1c1c1c, #050505) padding-box,
+    linear-gradient(115deg, #ff8a3d 0%, #da4e24 30%, rgba(255, 255, 255, 0.1) 55%, #0099ff 100%) border-box;
+  border: 1px solid transparent;
   color: #fff;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  transition: box-shadow 0.2s, filter 0.2s;
+  box-shadow: 0 -10px 26px -14px rgba(255, 110, 40, 0.95), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: box-shadow 0.25s, transform 0.2s;
 }
 .btn-flare:hover {
-  box-shadow: 0 0 22px rgba(255, 107, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  filter: brightness(1.06);
+  box-shadow: 0 -12px 34px -12px rgba(255, 110, 40, 1), 0 10px 30px -18px rgba(0, 153, 255, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 /* Section badge: cyan hairline pill. */
 .badge-glow {
-  border: 1px solid rgba(0, 145, 255, 0.35);
-  background: rgba(0, 145, 255, 0.08);
-  box-shadow: 0 0 20px -4px rgba(20, 147, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(22, 24, 30, 0.65);
+  box-shadow: 0 0 20px -3px rgba(0, 153, 255, 0.25);
+  backdrop-filter: blur(12px);
 }
 
 /* Dual-tone flare edge for featured cards. */
@@ -306,7 +304,7 @@ h3 {
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(90deg, #ff6b00 0%, rgba(255, 107, 0, 0) 50%, #0091ff 100%);
+  background: linear-gradient(115deg, #ff8a3d 0%, #da4e24 25%, rgba(255, 255, 255, 0.06) 55%, #0099ff 100%);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -315,7 +313,7 @@ h3 {
 
 /* Cyan-to-amber gradient text for hero emphasis. */
 .text-flare-gradient {
-  background: linear-gradient(90deg, #00d2ff 0%, #3aa8ff 45%, #ff8a3d 100%);
+  background: linear-gradient(90deg, #ffffff 0%, #ffffff 55%, #ffb58a 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -463,4 +461,54 @@ html {
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
   touch-action: manipulation;
+}
+
+/* ---------- Light streaks (Fusion AI hero effect, pure CSS) ---------- */
+
+.ember-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 55% 60% at 0% 100%, rgba(218, 78, 36, 0.55), rgba(128, 30, 0, 0.25) 40%, transparent 70%),
+    radial-gradient(ellipse 45% 50% at 100% 0%, rgba(0, 105, 166, 0.35), transparent 70%);
+}
+.streak-field {
+  position: absolute;
+  top: -25%;
+  right: -38%;
+  width: 105%;
+  height: 150%;
+  transform: rotate(-55deg);
+  transform-origin: center;
+  mix-blend-mode: screen;
+}
+.streak {
+  position: absolute;
+  left: -20%;
+  width: 140%;
+  border-radius: 999px;
+  background-size: 200% 100%;
+  animation: streak-flow 9s ease-in-out infinite alternate;
+}
+.streak-blue {
+  background-image: linear-gradient(90deg, transparent 0%, rgba(0, 82, 255, 0.2) 18%, #1060ff 38%, #3db4ff 52%, #1060ff 66%, rgba(0, 82, 255, 0.2) 82%, transparent 96%);
+}
+.streak-core {
+  background-image: linear-gradient(90deg, transparent 10%, rgba(160, 220, 255, 0.4) 35%, #e6f6ff 52%, rgba(160, 220, 255, 0.4) 68%, transparent 92%);
+}
+.streak-ember {
+  background-image: linear-gradient(90deg, transparent 5%, rgba(255, 110, 40, 0.1) 25%, #ff7a2f 48%, #ffb07a 54%, rgba(218, 78, 36, 0.3) 70%, transparent 92%);
+}
+.streak-haze {
+  background-image: linear-gradient(90deg, transparent 0%, rgba(0, 70, 220, 0.3) 28%, rgba(20, 120, 255, 0.6) 52%, rgba(0, 70, 220, 0.28) 74%, transparent 100%);
+}
+@keyframes streak-flow {
+  from { background-position: 0% 0; }
+  to { background-position: 100% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .streak { animation: none; }
+}
+@media (max-width: 767px) {
+  .streak-field { right: -80%; width: 170%; opacity: 0.8; }
 }

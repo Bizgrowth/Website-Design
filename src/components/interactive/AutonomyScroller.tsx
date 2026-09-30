@@ -82,7 +82,7 @@ export function AutonomyScroller() {
             <span className={`text-xs font-bold uppercase tracking-wider ${s.text}`}>
               Stage {i + 1} · {s.tier}
             </span>
-            <h3 className="mt-2 text-2xl font-bold">{s.name}</h3>
+            <h3 className="mt-2 text-2xl font-semibold">{s.name}</h3>
             <p className="mt-3 max-w-xl text-muted">{s.body}</p>
             <p className="mt-4 text-sm font-medium">{s.proof}</p>
           </motion.li>

@@ -1,4 +1,23 @@
-# Obsidian Flare — design system (from Google Stitch)
+# Design system
+
+**Current look (Sept 30, 2026): matched to the Fusion AI Framer template** (fusionai.framer.website), on top of the Obsidian Flare structure below.
+
+| Element | Fusion AI value |
+|---|---|
+| Canvas | Pure black `#000000` |
+| Cards | `#191919` at 70% with white 10% hairline border |
+| Blue | Electric `#0099FF` (streak cores `#1060FF` → `#3DB4FF`) |
+| Orange | Ember `#DA4E24`, bright `#FF8918`, deep `#801E00` glow |
+| Display type | General Sans (self-hosted, Fontshare ITF Free Font License), Medium/Semibold |
+| Body type | Inter |
+| Labels | Fragment Mono |
+| Primary button | Dark capsule, 1px orange→blue gradient edge, ember halo above (`.btn-flare`) |
+| Secondary button | Black, white 12% border |
+| Hero effect | Diagonal blue light streaks with ember fringes + ember glow bottom-left, recreated in CSS (`LightStreaks`) — no template image assets are used |
+
+---
+
+# Obsidian Flare — structure (from Google Stitch)
 
 Source: Daniel's Google Drive folder (DESIGN.md, code.html, screen.png exported from Stitch). This is the summary the site implements.
 

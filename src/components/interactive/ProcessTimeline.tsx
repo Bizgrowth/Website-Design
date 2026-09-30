@@ -32,7 +32,7 @@ export function ProcessTimeline({ phases }: { phases: Phase[] }) {
           </span>
           <div className="rounded-2xl border border-line bg-surface p-5">
             <div className="flex flex-wrap items-baseline gap-x-3">
-              <h3 className="text-lg font-bold">{p.name}</h3>
+              <h3 className="text-lg font-semibold">{p.name}</h3>
               <span className="text-xs font-medium text-faint">{p.time}</span>
             </div>
             <p className="mt-1 text-sm text-muted">{p.body}</p>

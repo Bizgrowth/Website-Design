@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { LightStreaks } from "@/components/LightStreaks";
 import { Morph, PageTransition } from "@/components/PageTransition";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -21,7 +22,10 @@ export default async function BlueprintPage(props: PageProps<"/blueprints/[slug]
 
   return (
     <PageTransition>
-      <header className="hero-backdrop border-b border-line">
+      <header className="relative isolate border-b border-line">
+        <div className="absolute inset-x-0 -top-28 bottom-0 -z-10 [mask-image:linear-gradient(to_bottom,black_60%,transparent)]">
+          <LightStreaks intensity={0.7} />
+        </div>
         <Container className="py-12 sm:py-16">
           <Link href="/blueprints" className="inline-flex min-h-11 items-center text-sm text-muted hover:text-ink">← All blueprints</Link>
           <div className="mt-5 flex flex-wrap gap-1.5">
@@ -29,7 +33,7 @@ export default async function BlueprintPage(props: PageProps<"/blueprints/[slug]
             <Tag>{b.industry}</Tag>
           </div>
           <Morph name={`bp-${b.slug}`}>
-            <h1 className="mt-4 max-w-3xl text-3xl font-bold sm:text-5xl">{b.title}</h1>
+            <h1 className="mt-4 max-w-3xl text-3xl font-medium sm:text-5xl">{b.title}</h1>
           </Morph>
           <p className="mt-4 max-w-2xl text-lg text-muted">{b.summary}</p>
           <div className="mt-5">

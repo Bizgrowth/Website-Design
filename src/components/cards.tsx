@@ -10,7 +10,7 @@ export function BlueprintCard({ blueprint }: { blueprint: Blueprint }) {
         <Tag>{blueprint.industry}</Tag>
       </div>
       <Morph name={`bp-${blueprint.slug}`}>
-        <h3 className="mt-4 text-lg font-bold">{blueprint.title}</h3>
+        <h3 className="mt-4 text-lg font-semibold">{blueprint.title}</h3>
       </Morph>
       <p className="mt-2 flex-1 text-sm text-muted">{blueprint.summary}</p>
       <p className="mt-4 font-mono text-xs text-faint">{blueprint.stack.join(" · ")}</p>
@@ -24,7 +24,7 @@ export function UpdateCard({ update }: { update: Update }) {
       <time dateTime={update.date} className="text-xs font-semibold uppercase tracking-wider text-faint">
         {formatDate(update.date)}
       </time>
-      <h3 className="mt-2 text-lg font-bold">{update.title}</h3>
+      <h3 className="mt-2 text-lg font-semibold">{update.title}</h3>
       <p className="mt-2 flex-1 text-sm text-muted">{update.summary}</p>
       <div className="mt-4">
         <PillarTags pillars={update.pillars} />
@@ -39,7 +39,7 @@ export function GuideCard({ guide }: { guide: Guide }) {
       <p className="text-xs font-semibold uppercase tracking-wider text-faint">
         Guide · {guide.readingMinutes} min read
       </p>
-      <h3 className="mt-2 text-lg font-bold">{guide.title}</h3>
+      <h3 className="mt-2 text-lg font-semibold">{guide.title}</h3>
       <p className="mt-2 flex-1 text-sm text-muted">{guide.summary}</p>
       <div className="mt-4">
         <PillarTags pillars={guide.pillars} />

@@ -26,7 +26,7 @@ export default function UpdatesPage() {
               <Link href={`/updates/${u.slug}`} className="grid gap-2 p-6 hover:bg-surface-2 sm:grid-cols-[140px_1fr]">
                 <time dateTime={u.date} className="text-sm font-semibold text-faint">{formatDate(u.date)}</time>
                 <div>
-                  <h2 className="text-lg font-bold">{u.title}</h2>
+                  <h2 className="text-lg font-medium">{u.title}</h2>
                   <p className="mt-1 text-sm text-muted">{u.summary}</p>
                   <div className="mt-3"><PillarTags pillars={u.pillars} /></div>
                 </div>

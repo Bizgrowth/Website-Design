@@ -1,5 +1,6 @@
 import { site } from "@/lib/site";
 import { CircleReveal } from "./interactive/Effects";
+import { LightStreaks } from "./LightStreaks";
 import { ButtonLink, Container } from "./ui";
 
 export function CtaBand({
@@ -14,9 +15,9 @@ export function CtaBand({
       <Container>
         <CircleReveal>
         <div className="glass flare-edge relative flex flex-col gap-6 overflow-hidden rounded-3xl p-10 md:flex-row md:items-center md:justify-between md:p-14">
-        <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-r from-flare/10 via-transparent to-accent/10" />
+        <LightStreaks intensity={0.9} />
         <div className="relative max-w-2xl">
-          <h2 className="text-3xl font-bold sm:text-4xl">{title}</h2>
+          <h2 className="text-3xl font-medium sm:text-4xl">{title}</h2>
           <p className="mt-3 text-muted">{lead}</p>
         </div>
         <div className="relative">

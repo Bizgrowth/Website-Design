@@ -69,7 +69,7 @@ export function BlueprintRail({ items }: { items: RailItem[] }) {
             </div>
             <p className="mt-6 text-xs font-medium text-accent">{b.industry}</p>
             <Morph name={`bp-${b.slug}`}>
-              <h3 className="mt-1 text-xl font-bold">{b.title}</h3>
+              <h3 className="mt-1 text-xl font-semibold">{b.title}</h3>
             </Morph>
             <p className="mt-3 flex-1 text-sm text-muted">{b.summary}</p>
             <p className="mt-6 font-mono text-xs text-faint">{b.stack.join(" · ")}</p>

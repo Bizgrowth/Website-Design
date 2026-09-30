@@ -25,7 +25,7 @@ export default function AboutPage() {
           </ZoomIn>
           <Reveal delay={0.1}>
             <Eyebrow>About</Eyebrow>
-            <h1 className="mt-3 text-4xl font-bold sm:text-5xl">{site.owner}</h1>
+            <h1 className="mt-3 text-4xl font-medium sm:text-5xl">{site.owner}</h1>
             <p className="mt-2 text-lg font-medium text-muted">Founder, {site.name} · Former COO</p>
             <p className="mt-5 max-w-2xl text-lg">{site.intro}</p>
             <ContactDetails className="mt-6" />

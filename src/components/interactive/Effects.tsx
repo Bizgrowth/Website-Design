@@ -10,6 +10,7 @@ import {
   useTransform,
 } from "motion/react";
 import { useRef, useState, type PointerEvent, type ReactNode } from "react";
+import { LightStreaks } from "@/components/LightStreaks";
 
 /* ---------------- Parallax ---------------- */
 
@@ -35,7 +36,9 @@ export function HeroParallax({ copy, visual, className = "" }: { copy: ReactNode
 
   return (
     <div ref={ref} className={`relative ${className}`}>
-      <motion.div aria-hidden style={{ y: bgY }} className="hero-backdrop pointer-events-none absolute inset-y-0 left-1/2 -z-10 w-screen -translate-x-1/2" />
+      <motion.div aria-hidden style={{ y: bgY }} className="pointer-events-none absolute -bottom-24 -top-32 left-1/2 -z-10 w-screen -translate-x-1/2 [mask-image:linear-gradient(to_bottom,black_75%,transparent)]">
+        <LightStreaks />
+      </motion.div>
       <div className="relative grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-center">
         <motion.div style={{ y: copyY, opacity: copyOpacity }}>{copy}</motion.div>
         <motion.div style={{ y: visualY }}>{visual}</motion.div>

@@ -38,7 +38,7 @@ export default function MethodPage() {
             {layers.map((l, i) => (
               <div key={l.name} className="rounded-2xl border border-line bg-bg p-6">
                 <p className="font-mono text-xs text-faint">Layer {i + 1}</p>
-                <h3 className="mt-1 text-lg font-bold">{l.name}</h3>
+                <h3 className="mt-1 text-lg font-semibold">{l.name}</h3>
                 <p className="mt-2 text-sm text-muted">{l.body}</p>
               </div>
             ))}

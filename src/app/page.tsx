@@ -42,7 +42,7 @@ export default function Home() {
                 <Reveal>
                   <Eyebrow>The SMB hub for AI operations</Eyebrow>
                 </Reveal>
-                <h1 className="mt-6 text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl xl:text-[3.4rem]">
+                <h1 className="mt-6 text-[2.6rem] font-semibold leading-[1.05] tracking-tight sm:text-6xl xl:text-[4rem]">
                   <WordCascade text="AI that runs your operations —" delay={0.1} />{" "}
                   <WordCascade text="measured, controlled, and owned." delay={0.45} className="text-flare-gradient" />
                 </h1>
@@ -78,7 +78,7 @@ export default function Home() {
           <div>
             <Reveal>
               <Eyebrow>The operator behind the hub</Eyebrow>
-              <h2 className="mt-4 text-3xl font-bold sm:text-4xl">AI is new. Running operations isn&apos;t.</h2>
+              <h2 className="mt-4 text-3xl font-medium sm:text-4xl">AI is new. Running operations isn&apos;t.</h2>
               <p className="mt-3 max-w-2xl text-muted">{site.intro}</p>
             </Reveal>
             <Stagger className="mt-8 grid grid-cols-2 gap-3 lg:grid-cols-4">
@@ -117,7 +117,7 @@ export default function Home() {
           <Stagger className="grid gap-4 md:grid-cols-3">
             {pillars.map((p) => (
               <SpotlightCard key={p.slug} href={`/hub/${p.slug}`} className="bg-bg">
-                <h3 className="text-xl font-bold">{p.name}</h3>
+                <h3 className="text-xl font-semibold">{p.name}</h3>
                 <p className="mt-2 text-sm font-medium">{p.question}</p>
                 <p className="mt-2 text-sm text-muted">{p.summary}</p>
                 <ul className="mt-4 flex flex-wrap gap-1.5">
@@ -167,7 +167,7 @@ export default function Home() {
         <Container className="grid gap-10 lg:grid-cols-[1fr_1.3fr]">
           <Reveal className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>How an install runs</Eyebrow>
-            <h2 className="mt-2 text-2xl font-bold sm:text-3xl">Five phases. Governance before the build.</h2>
+            <h2 className="mt-2 text-2xl font-medium sm:text-3xl">Five phases. Governance before the build.</h2>
             <p className="mt-3 text-muted">
               Owners, thresholds, and a failure plan are set before anything is automated — so AI lands on clean
               processes, not broken ones.
@@ -219,7 +219,7 @@ export default function Home() {
         <Container className="grid gap-10 lg:grid-cols-[1fr_2fr]">
           <Reveal>
             <Eyebrow>FAQ</Eyebrow>
-            <h2 className="mt-2 text-2xl font-bold sm:text-3xl">Straight answers</h2>
+            <h2 className="mt-2 text-2xl font-medium sm:text-3xl">Straight answers</h2>
           </Reveal>
           <Faq />
         </Container>

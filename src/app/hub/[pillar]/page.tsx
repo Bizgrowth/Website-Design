@@ -50,7 +50,7 @@ export default async function PillarPage(props: PageProps<"/hub/[pillar]">) {
       <Section title="Get help with this" tinted>
         {relatedServices.map((s) => (
           <Card key={s.slug} href={`/services/${s.slug}`}>
-            <h3 className="font-bold">{s.name}</h3>
+            <h3 className="font-semibold">{s.name}</h3>
             <p className="mt-2 text-sm text-muted">{s.outcome}</p>
           </Card>
         ))}

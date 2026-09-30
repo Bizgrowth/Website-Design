@@ -28,7 +28,7 @@ export function EarnedAutonomy() {
           <span className={`inline-flex rounded-full border px-2.5 py-0.5 text-xs font-bold ${s.tone}`}>
             Stage {i + 1} · {s.tier}
           </span>
-          <h3 className="mt-3 text-lg font-bold">{s.name}</h3>
+          <h3 className="mt-3 text-lg font-semibold">{s.name}</h3>
           <p className="mt-2 text-sm text-muted">{s.body}</p>
         </li>
       ))}

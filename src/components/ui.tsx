@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Wipe } from "@/components/interactive/Effects";
+import { LightStreaks } from "@/components/LightStreaks";
 import { pillarBySlug, type PillarSlug } from "@/lib/taxonomy";
 
 export function Container({ children, className = "" }: { children: ReactNode; className?: string }) {
@@ -33,7 +34,7 @@ export function SectionHeading({
       <div className="max-w-2xl">
         {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
         <Wipe>
-          <h2 className="mt-4 text-3xl font-bold sm:text-4xl">{title}</h2>
+          <h2 className="mt-4 text-3xl font-medium sm:text-4xl">{title}</h2>
         </Wipe>
         {lead && <p className="mt-3 text-muted">{lead}</p>}
       </div>
@@ -44,10 +45,13 @@ export function SectionHeading({
 
 export function PageHeader({ eyebrow, title, lead }: { eyebrow: string; title: string; lead?: string }) {
   return (
-    <header className="hero-backdrop border-b border-line">
+    <header className="relative isolate border-b border-line">
+      <div className="absolute inset-x-0 -top-28 bottom-0 -z-10 [mask-image:linear-gradient(to_bottom,black_60%,transparent)]">
+        <LightStreaks intensity={0.7} />
+      </div>
       <Container className="py-12 sm:py-20">
         <Eyebrow>{eyebrow}</Eyebrow>
-        <h1 className="mt-5 max-w-3xl text-4xl font-bold sm:text-5xl">{title}</h1>
+        <h1 className="mt-5 max-w-3xl text-4xl font-medium sm:text-5xl">{title}</h1>
         {lead && <p className="mt-4 max-w-2xl text-lg text-muted">{lead}</p>}
       </Container>
     </header>
@@ -114,13 +118,13 @@ export function ButtonLink({
 }) {
   const styles = {
     primary: "btn-flare",
-    secondary: "btn-ghost border border-white/15 bg-white/[0.04] text-ink hover:bg-white/[0.08]",
+    secondary: "btn-ghost border border-white/12 bg-white/[0.02] text-ink hover:border-white/25 hover:bg-white/[0.06]",
     inverse: "btn-flare",
   };
   return (
     <Link
       href={href}
-      className={`inline-flex min-h-11 items-center justify-center rounded-xl px-5 py-2.5 text-sm font-semibold transition active:scale-[0.98] ${styles[variant]}`}
+      className={`inline-flex min-h-11 items-center justify-center rounded-2xl px-6 py-3 text-[15px] font-medium transition active:scale-[0.98] ${styles[variant]}`}
     >
       {children}
     </Link>
