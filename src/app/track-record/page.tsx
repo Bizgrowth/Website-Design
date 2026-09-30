@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageTransition } from "@/components/PageTransition";
 import { CtaBand } from "@/components/CtaBand";
 import { Container, PageHeader } from "@/components/ui";
+import { ClientLogos } from "@/components/ClientLogos";
 import { ReferenceApps } from "@/components/ReferenceApps";
 import { trackRecord } from "@/lib/track-record";
 
@@ -44,6 +45,9 @@ export default function TrackRecordPage() {
             </li>
           ))}
         </ol>
+        <div className="mt-14">
+          <ClientLogos />
+        </div>
       </Container>
       <section className="border-t border-line bg-white/[0.015] py-14">
         <Container>

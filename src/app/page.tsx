@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PageTransition } from "@/components/PageTransition";
 import { UpdateCard } from "@/components/cards";
+import { ClientLogos } from "@/components/ClientLogos";
 import { ConnectedStack } from "@/components/ConnectedStack";
 import { CtaBand } from "@/components/CtaBand";
 import { Faq } from "@/components/Faq";
@@ -145,6 +146,15 @@ export default function Home() {
             />
           </Reveal>
           <AutonomyScroller />
+        </Container>
+      </section>
+
+      {/* 5b · Companies worked with */}
+      <section className="py-12 sm:py-16">
+        <Container>
+          <Reveal>
+            <ClientLogos />
+          </Reveal>
         </Container>
       </section>
 
