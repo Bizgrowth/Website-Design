@@ -47,7 +47,7 @@ export function SiteHeader() {
         className="fixed inset-x-0 top-[max(0.75rem,env(safe-area-inset-top))] z-50 px-3 sm:px-6"
       >
         <div
-          className={`mx-auto flex h-16 max-w-6xl items-center gap-3 rounded-2xl border px-3 sm:gap-6 sm:px-5 transition-[background-color,border-color,box-shadow,backdrop-filter] duration-300 ${
+          className={`mx-auto flex h-16 max-w-6xl items-center gap-3 rounded-2xl border px-3 sm:gap-4 sm:px-5 min-[1180px]:gap-6 transition-[background-color,border-color,box-shadow,backdrop-filter] duration-300 ${
             scrolled || menuOpen
               ? "border-line bg-bg/85 shadow-2xl backdrop-blur-xl"
               : "border-transparent bg-transparent"
@@ -62,16 +62,17 @@ export function SiteHeader() {
               priority
               className="h-10 w-10 shrink-0 drop-shadow-[0_0_10px_rgba(0,153,255,0.45)] transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"
             />
-            <span className="truncate">{site.name}</span>
+            <span className="truncate min-[1180px]:hidden">{site.shortName}</span>
+            <span className="hidden truncate min-[1180px]:inline">{site.name}</span>
           </Link>
 
-          <nav aria-label="Main" className="hidden flex-1 items-center gap-1 lg:flex">
+          <nav aria-label="Main" className="hidden flex-1 items-center gap-0.5 min-[900px]:flex">
             {nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 aria-current={isActive(item.href) ? "page" : undefined}
-                className={`nav-link relative flex min-h-11 items-center px-2.5 text-sm font-medium xl:px-3 transition-colors ${
+                className={`nav-link relative flex min-h-11 items-center px-2 text-[13px] font-medium min-[1180px]:px-3 min-[1180px]:text-sm transition-colors ${
                   isActive(item.href) ? "text-ink" : "text-muted hover:text-ink"
                 }`}
               >
@@ -91,7 +92,7 @@ export function SiteHeader() {
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
-            className="relative ml-auto grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-line bg-surface-2 sm:ml-0 lg:hidden"
+            className="relative ml-auto grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-line bg-surface-2 sm:ml-0 min-[900px]:hidden"
           >
             {[-6, 0, 6].map((offset, i) => (
               <motion.span
@@ -119,7 +120,7 @@ export function SiteHeader() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-40 overflow-y-auto bg-bg/95 px-6 pb-[max(2rem,env(safe-area-inset-bottom))] pt-28 backdrop-blur-xl lg:hidden"
+            className="fixed inset-0 z-40 overflow-y-auto bg-bg/95 px-6 pb-[max(2rem,env(safe-area-inset-bottom))] pt-28 backdrop-blur-xl min-[900px]:hidden"
           >
             <nav aria-label="Mobile" className="mx-auto max-w-md">
               <ul className="space-y-1">
