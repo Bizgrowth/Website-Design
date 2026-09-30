@@ -45,8 +45,8 @@ export default function Home() {
                   <Eyebrow>The SMB hub for AI operations</Eyebrow>
                 </Reveal>
                 <h1 className="mt-6 text-[2.6rem] font-semibold leading-[1.05] tracking-tight sm:text-6xl xl:text-[4rem]">
-                  <WordCascade text="AI can't run" delay={0.1} />{" "}
-                  <WordCascade text="what isn't written down." delay={0.45} className="text-flare-gradient" />
+                  <WordCascade text="If it isn't documented," delay={0.1} />{" "}
+                  <WordCascade text="it can't be automated." delay={0.45} className="text-flare-gradient" />
                 </h1>
                 <Reveal delay={0.7}>
                   <p className="mt-6 max-w-xl text-lg text-white/70">

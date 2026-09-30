@@ -40,7 +40,7 @@ export function getKnowledgeBase(): string {
     `Owner: ${site.owner}. Website: ${site.url}. Tagline: ${site.tagline}`,
     site.intro,
     `Booking link: ${site.bookingUrl}. Email: ${site.email}. Phone: ${site.phone}.`,
-    `Core belief: AI can't run what isn't written down. Without written SOPs, documented workflows, and connected data, AI does not create time, margin, or scale. Daniel's edge is operations: he fixes the foundations first, then automates what is left.`,
+    `Core belief: If it isn't documented, it can't be automated. Without written SOPs, documented workflows, and connected data, AI does not create time, margin, or scale. Daniel's edge is operations: he fixes the foundations first, then automates what is left.`,
   );
 
   out.push(

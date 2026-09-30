@@ -70,7 +70,7 @@ Repo hygiene: 82 repos, many archived duplicates (five Content_Creator variants,
 ## 6. Positioning
 
 - **Category:** Fractional COO & AI Operations Partner for owner-led service businesses
-- **Homepage headline (live):** "AI can't run what isn't written down." Core argument: no written SOPs, documented workflows, or connected data means no AI will create time, margin, or scale. The AI Readiness Assessment (`/assessment`) is the primary call to action.
+- **Homepage headline (live):** "If it isn't documented, it can't be automated." Core argument: no written SOPs, documented workflows, or connected data means no AI will create time, margin, or scale. The AI Readiness Assessment (`/assessment`) is the primary call to action.
 - **Earlier headline direction:** "An operator who has scaled companies to $265M, now installing AI that actually runs your operations: measured, controlled, and owned."
 - **Signature method:** *Earned Autonomy.* AI starts supervised, is measured against your baseline, and is promoted to autonomous one task type at a time, only once it passes.
 - **10X:** Claim it only per workflow, measured against the client's own baseline. Never company-wide.
