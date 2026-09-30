@@ -155,15 +155,18 @@ export function ChatWidget() {
   return (
     <>
       {!open && (
-        <button
-          type="button"
-          onClick={() => setOpen(true)}
-          className="btn-flare fixed bottom-20 right-4 z-50 inline-flex min-h-11 items-center gap-2 rounded-2xl px-5 py-3 text-[15px] font-medium sm:bottom-6 sm:right-6"
-          aria-label="Open the AI Solutions Guide chat"
-        >
-          <span className="h-2 w-2 rounded-full bg-ok" aria-hidden="true" />
-          Ask the AI guide
-        </button>
+        // The wrapper is what is pinned to the corner: .btn-flare sets position: relative, which would override `fixed` on the button itself.
+        <div className="fixed bottom-20 right-4 z-50 sm:bottom-6 sm:right-6">
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            className="btn-flare inline-flex min-h-11 items-center gap-2 rounded-2xl px-5 py-3 text-[15px] font-medium"
+            aria-label="Open the AI Solutions Guide chat"
+          >
+            <span className="h-2 w-2 rounded-full bg-ok" aria-hidden="true" />
+            Ask the AI guide
+          </button>
+        </div>
       )}
 
       {open && (
