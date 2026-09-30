@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PageTransition } from "@/components/PageTransition";
 import { UpdateCard } from "@/components/cards";
+import { ClientLogos } from "@/components/ClientLogos";
 import { ConnectedStack } from "@/components/ConnectedStack";
 import { CtaBand } from "@/components/CtaBand";
 import { Faq } from "@/components/Faq";
@@ -12,6 +13,7 @@ import { ProcessTimeline } from "@/components/interactive/ProcessTimeline";
 import { Reveal, Stagger } from "@/components/interactive/Reveal";
 import { SpotlightCard } from "@/components/interactive/SpotlightCard";
 import { OfferLadder } from "@/components/OfferLadder";
+import { ReferenceApps } from "@/components/ReferenceApps";
 import { Portrait } from "@/components/Portrait";
 import { ButtonLink, Container, Eyebrow, SectionHeading } from "@/components/ui";
 import { getBlueprints, getUpdates } from "@/lib/content";
@@ -147,6 +149,15 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* 5b · Companies worked with */}
+      <section className="py-12 sm:py-16">
+        <Container>
+          <Reveal>
+            <ClientLogos />
+          </Reveal>
+        </Container>
+      </section>
+
       {/* 6 · Blueprint rail */}
       <section className="border-y border-line bg-white/[0.015] py-12 sm:py-20">
         <Container>
@@ -159,6 +170,15 @@ export default function Home() {
             />
           </Reveal>
           <BlueprintRail items={blueprints} />
+        </Container>
+      </section>
+
+      {/* 6b · Interactive reference apps */}
+      <section className="py-12 sm:py-20">
+        <Container>
+          <Reveal>
+            <ReferenceApps />
+          </Reveal>
         </Container>
       </section>
 

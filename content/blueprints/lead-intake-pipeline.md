@@ -14,6 +14,7 @@ measures:
   - Lead-to-meeting conversion rate
   - Share of leads with a complete CRM record
 repo: https://github.com/Bizgrowth/Upwork-Projects/tree/main/mvp1-lead-pipeline
+app: 01-leadpilot.html
 ---
 
 ## The problem

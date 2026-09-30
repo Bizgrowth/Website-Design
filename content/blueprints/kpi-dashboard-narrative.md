@@ -14,6 +14,7 @@ measures:
   - Time from week-end to management review
   - Actions taken from the brief
 repo: https://github.com/Bizgrowth/Upwork-Projects/tree/main/mvp7-kpi-dashboard
+app: 07-pulseboard.html
 ---
 
 ## The problem
