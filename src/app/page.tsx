@@ -12,6 +12,7 @@ import { ProcessTimeline } from "@/components/interactive/ProcessTimeline";
 import { Reveal, Stagger } from "@/components/interactive/Reveal";
 import { SpotlightCard } from "@/components/interactive/SpotlightCard";
 import { OfferLadder } from "@/components/OfferLadder";
+import { ReferenceApps } from "@/components/ReferenceApps";
 import { Portrait } from "@/components/Portrait";
 import { ButtonLink, Container, Eyebrow, SectionHeading } from "@/components/ui";
 import { getBlueprints, getUpdates } from "@/lib/content";
@@ -159,6 +160,15 @@ export default function Home() {
             />
           </Reveal>
           <BlueprintRail items={blueprints} />
+        </Container>
+      </section>
+
+      {/* 6b · Interactive reference apps */}
+      <section className="py-12 sm:py-20">
+        <Container>
+          <Reveal>
+            <ReferenceApps />
+          </Reveal>
         </Container>
       </section>
 

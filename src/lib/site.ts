@@ -8,6 +8,7 @@ export const site = {
   description:
     "Blueprints, daily SMB AI updates, and governed AI operations from an operator who scaled a company from $0 to $265M.",
   owner: "Daniel Schley",
+  appsUrl: "https://apps.aiopsexpert.com",
   bookingUrl: "https://calendly.com/dschley-aiopsexpert/30min",
   email: "dschley@aiopsexpert.com",
   phone: "904-386-6644",

@@ -15,6 +15,7 @@ measures:
   - Answer accuracy on a monthly sample
   - Time to onboard a new hire
 repo: https://github.com/Bizgrowth/Upwork-Projects/tree/main/mvp2-rag-chatbot
+app: 05-knowledgebase.html
 ---
 
 ## The problem

@@ -24,6 +24,7 @@ export type Blueprint = BaseEntry & {
   measures: string[];
   repo?: string;
   loom?: string;
+  app?: string;
   order: number;
 };
 
@@ -77,6 +78,7 @@ export function getBlueprints(): Blueprint[] {
       measures: data.measures ?? [],
       repo: data.repo,
       loom: data.loom,
+      app: data.app,
       order: data.order ?? 99,
     }))
     .sort((a, b) => a.order - b.order);

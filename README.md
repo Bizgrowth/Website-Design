@@ -27,6 +27,7 @@ Every page is generated from a Markdown file. Add a file, push, and the page app
 Copy an existing file in the same folder and change the top section (between the `---` lines).
 
 - `pillars` must be one or more of `automation`, `integration`, `implementation`. This decides which AI Hub page the item appears on.
+- A blueprint can link to its interactive demo with `app: 01-leadpilot.html` (a file from apps.aiopsexpert.com). The demo list itself is in `src/lib/apps.ts`.
 - Every update needs at least one entry under `sources` and a one-line `takeaway`.
 
 ## Content rules

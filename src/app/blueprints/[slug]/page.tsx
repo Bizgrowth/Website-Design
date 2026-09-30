@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { CtaBand } from "@/components/CtaBand";
 import { Container, Eyebrow, PillarTags, ReferenceBuildTag, Tag } from "@/components/ui";
 import { getBlueprint, getBlueprints } from "@/lib/content";
+import { site } from "@/lib/site";
 
 export function generateStaticParams() {
   return getBlueprints().map((b) => ({ slug: b.slug }));
@@ -57,10 +58,18 @@ export default async function BlueprintPage(props: PageProps<"/blueprints/[slug]
           <Panel title="What it measures">
             <List items={b.measures} />
           </Panel>
-          {(b.repo || b.loom) && (
+          {(b.repo || b.loom || b.app) && (
             <Panel title="See it">
               <ul className="space-y-2 text-sm">
                 {b.loom && <li><a className="font-semibold text-accent" href={b.loom}>Watch the 90-second walkthrough →</a></li>}
+                {b.app && (
+                  <li>
+                    <a className="font-semibold text-accent" href={`${site.appsUrl}/${b.app}`} target="_blank" rel="noopener noreferrer">
+                      Open the interactive reference app →
+                    </a>
+                    <span className="block text-xs text-faint">Sample data — not a client result.</span>
+                  </li>
+                )}
                 {b.repo && <li><a className="font-semibold text-accent" href={b.repo}>View the build on GitHub →</a></li>}
               </ul>
             </Panel>
