@@ -37,7 +37,7 @@ export default function ContactPage() {
           </div>
           <div
             className="calendly-inline-widget relative"
-            data-url={`${site.bookingUrl}?hide_gdpr_banner=1`}
+            data-url={site.bookingUrl}
             style={{ minWidth: 320, height: 720 }}
           />
           <noscript>

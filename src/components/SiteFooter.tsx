@@ -34,7 +34,10 @@ export function SiteFooter() {
       </Container>
       <Container className="flex flex-col gap-2 border-t border-line py-6 text-xs text-faint sm:flex-row sm:justify-between">
         <p>© {new Date().getFullYear()} {site.name}. Blueprints are labeled reference builds unless stated otherwise.</p>
-        <p>Jacksonville, FL · Serving clients remotely</p>
+        <p>
+          Jacksonville, FL · Serving clients remotely ·{" "}
+          <Link href="/privacy" className="underline hover:text-ink">Privacy Policy</Link>
+        </p>
       </Container>
     </footer>
   );
