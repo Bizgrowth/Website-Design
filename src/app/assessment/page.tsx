@@ -47,7 +47,7 @@ export default function AssessmentPage() {
     <PageTransition>
       <PageHeader
         eyebrow="AI Readiness Assessment"
-        title="AI can't run what isn't written down."
+        title="If it isn't documented, it can't be automated."
         lead="No SOPs, no documented workflows, and data trapped in silos: that's where AI projects stall. Find out where your operations stand in ten questions."
       />
 
