@@ -236,7 +236,8 @@ export function ChatWidget() {
               </button>
             </div>
             <p className="mt-2 text-[11px] leading-snug text-faint">
-              AI-generated answers can be wrong. Messages are processed by an AI service. If you share contact details, they&apos;re emailed to {site.owner}. Prefer to talk?{" "}
+              AI-generated answers can be wrong. Messages are processed by an AI service. If you share contact details, they&apos;re emailed to {site.owner}. See our{" "}
+              <Link className="underline" href="/privacy">Privacy Policy</Link>. Prefer to talk?{" "}
               <a className="underline" href={site.bookingUrl} target="_blank" rel="noopener noreferrer">Book an Ops Call</a>.
             </p>
           </form>
