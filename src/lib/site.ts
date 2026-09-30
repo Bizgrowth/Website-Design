@@ -4,6 +4,7 @@ export const site = {
   domain: "aiopsexpert.com",
   url: "https://aiopsexpert.com",
   tagline: "The SMB hub for AI automation, integration, and implementation.",
+  slogan: "Operation Intelligence, AI Powered",
   description:
     "Blueprints, daily SMB AI updates, and governed AI operations from an operator who scaled a company from $0 to $265M.",
   owner: "Daniel Schley",

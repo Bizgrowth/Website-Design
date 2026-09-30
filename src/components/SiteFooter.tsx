@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { pillars, services } from "@/lib/taxonomy";
@@ -9,7 +10,7 @@ export function SiteFooter() {
     <footer className="mt-auto border-t border-line bg-surface">
       <Container className="grid gap-8 py-12 pb-[max(3rem,env(safe-area-inset-bottom))] sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <p className="font-bold">{site.name}</p>
+          <Image src="/brand/logo-dark.png" alt={site.name} width={900} height={488} className="h-auto w-52" />
           <p className="mt-2 text-sm text-muted">{site.tagline}</p>
           <ContactDetails className="mt-4" />
         </div>

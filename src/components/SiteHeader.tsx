@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
@@ -53,9 +54,14 @@ export function SiteHeader() {
           }`}
         >
           <Link href="/" className="group flex min-h-11 min-w-0 shrink items-center gap-2.5 font-bold tracking-tight">
-            <span className="orb-glow grid h-8 w-8 place-items-center rounded-full transition-transform duration-300 group-hover:scale-110">
-              <span className="h-2.5 w-2.5 rounded-full bg-white/70" />
-            </span>
+            <Image
+              src="/brand/emblem.png"
+              alt=""
+              width={40}
+              height={40}
+              priority
+              className="h-10 w-10 shrink-0 drop-shadow-[0_0_10px_rgba(0,153,255,0.45)] transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"
+            />
             <span className="truncate">{site.name}</span>
           </Link>
 
