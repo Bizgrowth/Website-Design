@@ -8,9 +8,15 @@ import { Container } from "./ui";
 export function SiteFooter() {
   return (
     <footer className="mt-auto border-t border-line bg-surface">
-      <Container className="grid gap-8 py-12 pb-[max(3rem,env(safe-area-inset-bottom))] sm:grid-cols-2 lg:grid-cols-4">
+      <Container className="grid gap-8 py-12 pb-[max(3rem,env(safe-area-inset-bottom))] sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
         <div>
-          <Image src="/brand/logo-dark.png" alt={site.name} width={900} height={488} className="h-auto w-52" />
+          <Link href="/" className="flex items-center gap-3">
+            <Image src="/brand/emblem.png" alt="" width={56} height={56} className="h-14 w-14 drop-shadow-[0_0_12px_rgba(0,153,255,0.45)]" />
+            <span>
+              <span className="block whitespace-nowrap font-[family-name:var(--font-display)] text-lg font-semibold leading-tight">{site.name}</span>
+              <span className="mt-1 block whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.04em] text-hero-accent">{site.slogan}</span>
+            </span>
+          </Link>
           <p className="mt-2 text-sm text-muted">{site.tagline}</p>
           <ContactDetails className="mt-4" />
         </div>
