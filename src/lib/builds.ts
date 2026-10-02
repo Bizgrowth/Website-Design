@@ -103,6 +103,7 @@ export const libraryBuilds: LibraryBuild[] = [
     title: "See your pipeline and forecast without a spreadsheet",
     short: "A drag-and-drop deal board with live totals and a weighted forecast.",
     wave: "second",
+    blueprint: "pipeline-forecast",
     steps: [
       "Deals sit on a board by stage, and moving one updates the totals.",
       "Each stage carries a win-rate weight, so the forecast reflects odds, not just the sum of deals.",
@@ -118,6 +119,7 @@ export const libraryBuilds: LibraryBuild[] = [
     title: "Onboard every new client the same way",
     short: "A staged checklist where finishing one stage unlocks the next and progress is visible to everyone.",
     wave: "second",
+    blueprint: "client-onboarding-checklist",
     steps: [
       "Your onboarding steps are set up as stages with clear owners.",
       "Finishing a stage unlocks the next, so nothing is skipped.",
@@ -133,6 +135,7 @@ export const libraryBuilds: LibraryBuild[] = [
     title: "Turn your SOPs into task drafts",
     short: "A task board with an SOP panel that drafts a first pass from the task and the procedure.",
     wave: "second",
+    blueprint: "sop-to-task-drafts",
     steps: [
       "Tasks live on a board next to the written procedure for that kind of work.",
       "The SOP panel drafts a first pass from the task details and the procedure.",
