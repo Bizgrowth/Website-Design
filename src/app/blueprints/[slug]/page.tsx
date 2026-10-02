@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { CtaBand } from "@/components/CtaBand";
 import { Container, Eyebrow, PillarTags, ReferenceBuildTag, Tag } from "@/components/ui";
 import { getBlueprint, getBlueprints } from "@/lib/content";
+import { libraryBuilds } from "@/lib/builds";
 import { site } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -69,6 +70,9 @@ export default async function BlueprintPage(props: PageProps<"/blueprints/[slug]
                     </a>
                     <span className="block text-xs text-faint">Sample data — not a client result.</span>
                   </li>
+                )}
+                {b.app && libraryBuilds.find((x) => x.blueprint === b.slug) && (
+                  <li><Link className="font-semibold text-accent" href={`/builds/${libraryBuilds.find((x) => x.blueprint === b.slug)!.slug}`}>See it in the Build Library →</Link></li>
                 )}
                 {b.repo && <li><a className="font-semibold text-accent" href={b.repo}>View the build on GitHub →</a></li>}
               </ul>
