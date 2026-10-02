@@ -12,6 +12,7 @@ Never put keys in the code or in GitHub. Add them as **environment variables in 
 | `RESEND_API_KEY` | Yes, for lead emails | From resend.com → API Keys. Sends the lead alert email. |
 | `LEAD_TO_EMAIL` | No | Where lead alerts go. Defaults to the email in `src/lib/site.ts`. |
 | `LEAD_FROM_EMAIL` | No | Sender, for example `AI Ops Expert Chat <chat@aiopsexpert.com>`. Needs your domain verified in Resend. Until then the default test sender only delivers to the Resend account owner's email. |
+| `CONTACT_FROM_EMAIL` | No | Sender for the contact form and results emails, for example `Daniel Schley <hello@aiopsexpert.com>`. Any address on your verified domain works. Falls back to `LEAD_FROM_EMAIL`. |
 | `CHAT_MODEL` | No | Defaults to `claude-opus-5-5`. Set `claude-sonnet-5-5` for roughly half the cost. |
 
 Without `ANTHROPIC_API_KEY` the button still appears, and visitors see a friendly "offline" message with your booking link. Without `RESEND_API_KEY` the agent chats normally but tells visitors to email you instead of claiming a lead was sent.
@@ -39,3 +40,7 @@ Without `ANTHROPIC_API_KEY` the button still appears, and visitors see a friendl
 
 - Add a privacy policy page and link it from the chat panel. The chat processes visitor messages with an AI service and emails contact details.
 - Send yourself a test lead and confirm the email arrives.
+
+## Contact form and "email me my results"
+
+Both use the same Resend setup as the chat (`RESEND_API_KEY`, `LEAD_TO_EMAIL`, `LEAD_FROM_EMAIL`). Each submission sends two emails: an alert to `LEAD_TO_EMAIL` (reply-to is the visitor) and a confirmation or results email to the visitor. They include a hidden spam trap and a limit of 5 submissions per visitor per 10 minutes. Without `RESEND_API_KEY` the forms show an "email is offline" message and point to the booking calendar.

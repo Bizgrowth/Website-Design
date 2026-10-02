@@ -137,28 +137,97 @@ export const tiers: Record<Tier["slug"], Tier> = {
   },
 };
 
+export type AreaScore = { slug: string; name: string; score: number; why: string; firstMove: string };
+
 export type AssessmentResult = {
   total: number;
   max: number;
-  areas: { slug: string; name: string; score: number; why: string; firstMove: string }[];
-  weakest: { slug: string; name: string; score: number; why: string; firstMove: string };
+  areas: AreaScore[];
+  weakest: AreaScore;
   tier: Tier;
 };
+
+// AI stalls on the weakest link, so the lowest area caps the tier as well as the total.
+export function tierFor(total: number, weakestScore: number): Tier {
+  if (total >= 23 && weakestScore >= 3) return tiers["ready-to-scale"];
+  if (total >= 13 && weakestScore >= 2) return tiers["ready-to-pilot"];
+  return tiers["fix-first"];
+}
+
+// Builds a result from per-area scores (0-6 each). Used for the real result and for "what if" scenarios.
+export function summarize(scores: Record<string, number>): AssessmentResult {
+  const areas = assessmentAreas.map((a) => ({ slug: a.slug, name: a.name, why: a.why, firstMove: a.firstMove, score: scores[a.slug] ?? 0 }));
+  const total = areas.reduce((s, a) => s + a.score, 0);
+  const weakest = areas.reduce((w, a) => (a.score < w.score ? a : w));
+  return { total, max: questionCount * 3, areas, weakest, tier: tierFor(total, weakest.score) };
+}
+
+export const areaScoresFromAnswers = (answers: Record<string, number>) =>
+  Object.fromEntries(assessmentAreas.map((a) => [a.slug, a.questions.reduce((s, q) => s + (answers[q.id] ?? 0), 0)]));
 
 // answers: question id -> score. Returns null until every question is answered.
 export function scoreAssessment(answers: Record<string, number>): AssessmentResult | null {
   if (assessmentAreas.some((a) => a.questions.some((q) => answers[q.id] === undefined))) return null;
-  const areas = assessmentAreas.map((a) => ({
-    slug: a.slug,
-    name: a.name,
-    why: a.why,
-    firstMove: a.firstMove,
-    score: a.questions.reduce((s, q) => s + answers[q.id], 0),
-  }));
-  const total = areas.reduce((s, a) => s + a.score, 0);
-  const weakest = areas.reduce((w, a) => (a.score < w.score ? a : w));
-  // AI stalls on the weakest link, so the lowest area caps the tier as well as the total.
-  const tier =
-    total >= 23 && weakest.score >= 3 ? tiers["ready-to-scale"] : total >= 13 && weakest.score >= 2 ? tiers["ready-to-pilot"] : tiers["fix-first"];
-  return { total, max: questionCount * 3, areas, weakest, tier };
+  return summarize(areaScoresFromAnswers(answers));
+}
+
+// True when every question has a valid 0-3 answer (used by the server before trusting a client submission).
+export const validAnswers = (answers: unknown): answers is Record<string, number> =>
+  typeof answers === "object" &&
+  answers !== null &&
+  assessmentAreas.every((a) =>
+    a.questions.every((q) => {
+      const v = (answers as Record<string, unknown>)[q.id];
+      return typeof v === "number" && Number.isInteger(v) && v >= 0 && v <= 3;
+    }),
+  );
+
+// One line shown when an area is finished, explaining why it matters before any AI is added.
+export const areaInsights: Record<string, string> = {
+  sops: "AI can only follow steps that exist in writing. Where the steps live in people's heads, automation has to guess, or it copies the mess.",
+  workflows: "A mapped workflow shows what to automate, what to leave to people, and where a person must approve before anything goes out.",
+  data: "AI is only as good as the information it reads. Two versions of the truth means two different answers, delivered faster.",
+  systems: "Wherever a person re-types data between tools is where automation plugs in, and where it breaks first if the handoff is unclear.",
+  control: "Every automation needs an owner and a way to know it is going wrong. Without that, errors show up as customer complaints.",
+};
+
+export const levelWord = (score: number) => (score <= 1 ? "Not yet" : score <= 3 ? "Getting there" : score <= 5 ? "Solid" : "Strong");
+
+// The reference builds, and the minimum area scores (out of 6) each one needs to work well.
+export type Build = { name: string; does: string; href: string; needs: Partial<Record<string, number>> };
+export const readinessBuilds: Build[] = [
+  { name: "LeadPilot", does: "Replies to new leads in under a minute", href: "https://apps.aiopsexpert.com/01-leadpilot.html", needs: { workflows: 4, data: 4, systems: 3 } },
+  { name: "PipelineIQ", does: "Sales pipeline and forecast without a spreadsheet", href: "https://apps.aiopsexpert.com/02-pipelineiq.html", needs: { data: 4, systems: 3, workflows: 3 } },
+  { name: "Onboard", does: "Onboards every new client the same way", href: "https://apps.aiopsexpert.com/03-onboard.html", needs: { sops: 4, workflows: 4 } },
+  { name: "FlowDesk", does: "Turns your SOPs into task drafts", href: "https://apps.aiopsexpert.com/04-flowdesk.html", needs: { sops: 4, workflows: 3 } },
+  { name: "KnowledgeBase", does: "Answers questions from your own SOPs", href: "https://apps.aiopsexpert.com/05-knowledgebase.html", needs: { sops: 4, data: 3 } },
+  { name: "LedgerFlow", does: "Faster invoicing and receivables", href: "https://apps.aiopsexpert.com/06-ledgerflow.html", needs: { data: 4, systems: 3, workflows: 3 } },
+  { name: "PulseBoard", does: "A weekly report that explains itself", href: "https://apps.aiopsexpert.com/07-pulseboard.html", needs: { data: 4, systems: 4 } },
+  { name: "RetainAI", does: "Triages inbound messages and drafts replies", href: "https://apps.aiopsexpert.com/08-retainai.html", needs: { sops: 3, workflows: 4, control: 3 } },
+];
+
+export type BuildStatus = { build: Build; ready: boolean; gaps: { slug: string; name: string; have: number; need: number }[] };
+
+export function buildStatuses(scores: Record<string, number>): BuildStatus[] {
+  return readinessBuilds.map((build) => {
+    const gaps = Object.entries(build.needs)
+      .map(([slug, need]) => ({ slug, name: assessmentAreas.find((a) => a.slug === slug)?.name ?? slug, have: scores[slug] ?? 0, need: need ?? 0 }))
+      .filter((g) => g.have < g.need);
+    return { build, ready: gaps.length === 0, gaps };
+  });
+}
+
+// A four-week starter plan built from the person's own answers.
+export function starterPlan(result: AssessmentResult): { week: string; title: string; detail: string }[] {
+  const ranked = [...result.areas].sort((a, b) => a.score - b.score);
+  const [first, second] = ranked;
+  const ready = result.tier.slug !== "fix-first";
+  return [
+    { week: "Week 1", title: `Start with ${first.name.toLowerCase()}`, detail: first.firstMove },
+    { week: "Week 2", title: `Then ${second.name.toLowerCase()}`, detail: second.firstMove },
+    { week: "Week 3", title: "Test it on someone new", detail: "Ask a person who did not write the documents to follow them for one real task. Fix every place they get stuck." },
+    ready
+      ? { week: "Week 4", title: "Pilot one workflow, supervised", detail: "Pick one well-documented workflow. Let AI draft and a person approve every output while you measure time and errors against today." }
+      : { week: "Week 4", title: "Re-take this check", detail: "Score yourself again. Once no area is below 2 and your total passes 13, you are ready to pilot your first automation." },
+  ];
 }

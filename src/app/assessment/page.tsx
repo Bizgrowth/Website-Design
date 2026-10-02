@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { AssessmentTool } from "@/components/AssessmentTool";
+import { AssessmentApp } from "@/components/AssessmentApp";
 import { CtaBand } from "@/components/CtaBand";
 import { PageTransition } from "@/components/PageTransition";
-import { Container, Eyebrow, PageHeader, SectionHeading } from "@/components/ui";
+import { Container, PageHeader, SectionHeading } from "@/components/ui";
 import { offers } from "@/lib/offers";
 
 export const metadata: Metadata = {
@@ -48,9 +48,14 @@ export default function AssessmentPage() {
       <PageHeader
         eyebrow="AI Readiness Assessment"
         title="If it isn't documented, it can't be automated."
-        lead="No SOPs, no documented workflows, and data trapped in silos: that's where AI projects stall. Find out where your operations stand in ten questions."
+        lead="No SOPs, no documented workflows, and data trapped in silos: that's where AI projects stall. Take the interactive self-check to see where your operation stands and where to start."
       />
 
+      <Container className="py-10 sm:py-14">
+        <AssessmentApp />
+      </Container>
+
+      <section className="border-y border-line bg-white/[0.015]">
       <Container className="py-14">
         <SectionHeading eyebrow="Why it matters" title="The tools are not the hard part" />
         <ul className="grid gap-4 md:grid-cols-3">
@@ -69,19 +74,6 @@ export default function AssessmentPage() {
           given. Clear, documented processes get faster. Unclear ones get louder.
         </p>
       </Container>
-
-      <section className="border-y border-line bg-white/[0.015] py-14">
-        <Container className="max-w-3xl">
-          <Eyebrow>Free self-check</Eyebrow>
-          <h2 className="mt-4 text-3xl font-medium sm:text-4xl">Is your operation ready for AI?</h2>
-          <p className="mt-3 text-muted">
-            Ten questions across five areas: written SOPs, mapped workflows, connected data, systems, and ownership. Your lowest area matters as much
-            as your total, because AI stalls on the weakest link.
-          </p>
-          <div className="mt-10">
-            <AssessmentTool />
-          </div>
-        </Container>
       </section>
 
       <Container className="py-14">
