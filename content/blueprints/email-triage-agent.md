@@ -2,6 +2,7 @@
 title: Inbound Email Triage Agent with Eval Gating
 summary: An agent reads every inbound email, classifies it, pulls facts from your systems, and writes a draft reply for staff to approve. Nothing sends automatically until it's measured.
 order: 1
+app: 08-retainai.html
 industry: Hospitality & booking
 pillars: [automation, integration, implementation]
 stack: [Make.com, Relevance AI, Gmail, QuickBooks Online, Google Sheets, promptfoo]
