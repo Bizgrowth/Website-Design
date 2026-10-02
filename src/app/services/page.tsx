@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageTransition } from "@/components/PageTransition";
 import { CtaBand } from "@/components/CtaBand";
-import { Card, Container, Eyebrow, PageHeader } from "@/components/ui";
+import { Card, Container, PageHeader } from "@/components/ui";
 import { services } from "@/lib/taxonomy";
 
 export const metadata: Metadata = {
@@ -42,12 +43,10 @@ export default function ServicesPage() {
               <p className="mt-2 text-sm text-muted">{s.summary}</p>
             </Card>
           ))}
-          <Card href="/fractional-coo" className="border-dashed">
-            <Eyebrow>Premium</Eyebrow>
-            <h2 className="mt-2 text-xl font-medium">Fractional COO</h2>
-            <p className="mt-2 text-sm text-muted">Part-time senior operations leadership with AI built into the operating plan.</p>
-          </Card>
         </div>
+        <p className="mt-10 text-sm text-muted">
+          Need ongoing senior operations leadership instead? <Link href="/fractional-coo" className="text-accent hover:underline">See the Fractional COO option</Link>.
+        </p>
       </Container>
       <CtaBand />
     </PageTransition>

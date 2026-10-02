@@ -10,5 +10,5 @@ export const referenceApps = [
   { name: "KnowledgeBase", area: "Communication & Knowledge", file: "05-knowledgebase.html", blurb: "Live search and tag filters across an SOP article set." },
   { name: "LedgerFlow", area: "Finance & Billing", file: "06-ledgerflow.html", blurb: "Invoice table — mark one paid and AR aging and DSO recalculate." },
   { name: "PulseBoard", area: "Reporting & Analytics", file: "07-pulseboard.html", blurb: "Date and segment filters redraw a chart and a plain-English trend summary." },
-  { name: "RetainAI", area: "Retention & Support", file: "08-retainai.html", blurb: "Ticket queue by priority and account health, with a tailored draft reply." },
+  { name: "RetainAI", area: "Inbound messages", file: "08-retainai.html", blurb: "Inbound message queue by priority and account health, with a tailored draft reply." },
 ].map((a) => ({ ...a, href: `${site.appsUrl}/${a.file}` }));

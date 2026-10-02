@@ -26,7 +26,7 @@ export const site = {
 
 export const nav = [
   { href: "/hub", label: "AI Hub" },
-  { href: "/blueprints", label: "Blueprints" },
+  { href: "/builds", label: "Build Library" },
   { href: "/updates", label: "SMB AI Daily" },
   { href: "/services", label: "Services" },
   { href: "/method", label: "Method" },

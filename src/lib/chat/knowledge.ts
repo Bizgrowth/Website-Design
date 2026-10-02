@@ -3,6 +3,7 @@ import path from "node:path";
 import matter from "gray-matter";
 import { assessmentAreas } from "@/lib/assessment";
 import { referenceApps } from "@/lib/apps";
+import { libraryBuilds } from "@/lib/builds";
 import { clients } from "@/lib/clients";
 import { faqs, offers } from "@/lib/offers";
 import { phases } from "@/lib/phases";
@@ -80,6 +81,11 @@ export function getKnowledgeBase(): string {
   out.push(
     "\n# Interactive reference apps (apps.aiopsexpert.com). Demos on sample data, NOT client results",
     ...referenceApps.map((a) => `- ${a.name} (${a.area}): ${a.blurb} ${a.href}`),
+  );
+
+  out.push(
+    "\n# Build Library (page: /builds). Reference builds framed by the problem they solve, on sample data, NOT client results",
+    ...libraryBuilds.map((b) => `- ${b.title} (/builds/${b.slug}, app: ${b.app}): ${b.short} Needs: ${list(b.needs)}.`),
   );
 
   out.push("\n# Blueprints (page: /blueprints). Reference builds, NOT client projects");
