@@ -1,3 +1,4 @@
+import { sendMail, ownerAddress } from "@/lib/mail";
 import { site } from "@/lib/site";
 
 export type Lead = {
@@ -34,11 +35,6 @@ export function parseLead(input: unknown, page?: string): { lead: Lead } | { err
 
 // Sends the lead to Daniel by email through Resend. Returns true only when the email was accepted.
 export async function sendLeadEmail(lead: Lead): Promise<boolean> {
-  const key = process.env.RESEND_API_KEY;
-  if (!key) {
-    console.error("[chat] RESEND_API_KEY is not set; lead not delivered.");
-    return false;
-  }
   const text = [
     `New lead from the ${site.shortName} website chat`,
     "",
@@ -55,22 +51,10 @@ export async function sendLeadEmail(lead: Lead): Promise<boolean> {
     "",
     "The visitor agreed to be contacted. Reply to this email to respond to them directly.",
   ].join("\n");
-  try {
-    const res = await fetch(process.env.RESEND_API_URL || "https://api.resend.com/emails", {
-      method: "POST",
-      headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
-      body: JSON.stringify({
-        from: process.env.LEAD_FROM_EMAIL || `${site.shortName} Chat <onboarding@resend.dev>`,
-        to: [process.env.LEAD_TO_EMAIL || site.email],
-        reply_to: lead.email,
-        subject: `New chat lead: ${lead.name}${lead.company ? ` (${lead.company})` : ""}`,
-        text,
-      }),
-    });
-    if (!res.ok) console.error("[chat] Resend rejected the lead email:", res.status);
-    return res.ok;
-  } catch (err) {
-    console.error("[chat] Lead email failed:", err instanceof Error ? err.message : err);
-    return false;
-  }
+  return sendMail({
+    to: ownerAddress(),
+    replyTo: lead.email,
+    subject: `New chat lead: ${lead.name}${lead.company ? ` (${lead.company})` : ""}`,
+    text,
+  });
 }

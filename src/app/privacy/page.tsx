@@ -37,6 +37,14 @@ export default function PrivacyPage() {
               email, and notes) is collected by the scheduling provider and shared with us.
             </li>
             <li>
+              <strong>Contact form messages.</strong> If you use the contact form, we receive the name, email address, company (optional), and message you
+              enter. We email you a confirmation and reply to your message.
+            </li>
+            <li>
+              <strong>Readiness results.</strong> If you ask us to email your AI Readiness results, we receive the name, email address, and company (optional)
+              you enter, along with your answers and scores, and we email you the results.
+            </li>
+            <li>
               <strong>Emails you send us.</strong> If you email us or reply to us, we keep that correspondence.
             </li>
             <li>
@@ -45,7 +53,7 @@ export default function PrivacyPage() {
             </li>
           </ul>
           <p>
-            The AI Readiness self-check on our site runs entirely in your browser. Your answers are not sent to us or stored by us.
+            The AI Readiness self-check runs in your browser. Your answers are only sent to us if you choose to email yourself your results.
           </p>
 
           <h2>How we use it</h2>
@@ -73,7 +81,7 @@ export default function PrivacyPage() {
           <ul>
             <li>Website hosting (Vercel).</li>
             <li>AI processing for the chat (Anthropic).</li>
-            <li>Email delivery of chat leads to us (Resend) and email hosting (Hostinger).</li>
+            <li>Email delivery of chat leads, contact form messages, and results emails (Resend), and email hosting (Hostinger).</li>
             <li>Call scheduling (Calendly).</li>
           </ul>
           <p>
