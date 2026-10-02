@@ -6,7 +6,7 @@ import { useRef, useState } from "react";
 import { BrandIcon } from "@/components/BrandIcon";
 import type { Category, Integration } from "@/lib/integrations";
 
-// Filterable grid of tool tiles over a glowing orb. Selecting a tile shows
+// Filterable grid of tool tiles. Selecting a tile shows
 // what gets automated with it and the blueprints that use it.
 export function StackExplorer({
   integrations,
@@ -50,8 +50,6 @@ export function StackExplorer({
 
       <div className="mt-8 grid gap-6 md:grid-cols-[1fr_300px] lg:grid-cols-[1fr_360px] lg:gap-8">
         <div className="relative">
-          {/* Glowing orb behind the grid */}
-          <div aria-hidden className="pointer-events-none absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 sm:h-[420px] sm:w-[420px] -translate-y-1/2 rounded-full orb" />
           <ul className="relative grid grid-cols-6 gap-2 sm:gap-3 md:grid-cols-4 lg:grid-cols-6">
             {integrations.map((tool) => {
               const dim = filter !== "All" && tool.category !== filter;
