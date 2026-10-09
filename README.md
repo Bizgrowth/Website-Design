@@ -57,4 +57,4 @@ Claude uses the `add-content` skill: it writes the page, checks it, and opens a 
 
 **Your photo:** upload a square headshot to `public/images/daniel-schley.jpg`. In GitHub: open the repo → `public/images` → **Add file → Upload files**. It appears on the home, About, and Contact pages automatically.
 
-**SMB AI Daily** runs automatically each weekday morning. It drafts one sourced update and opens a pull request titled "SMB AI Daily — …". Merge to publish, or close it to skip that day.
+**SMB AI Daily** runs automatically each weekday morning. It drafts one sourced update and opens a pull request titled "SMB AI Daily — …". If you do nothing, the next morning's run publishes it. To skip it, close the PR. To pause it, add a `hold` label or comment what to change. You can also click **Merge** to publish right away.
