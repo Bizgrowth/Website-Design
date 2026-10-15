@@ -47,17 +47,16 @@ export function getKnowledgeBase(): string {
   out.push(
     "\n# Services (page: /services)",
     ...services.map((s) => `- ${s.name} (/services/${s.slug}): ${s.outcome} ${s.summary} Deliverables: ${list(s.deliverables)}`),
-    "- Fractional COO (/fractional-coo): part-time senior operations leadership with AI built into the operating plan.",
   );
 
   out.push(
-    "\n# Pricing (published starting prices only; custom quotes need a call)",
-    ...offers.map((o) => `- ${o.name}: ${o.price}, ${o.cadence}. ${o.body} Includes: ${o.points.join("; ")}`),
+    "\n# Service steps and pricing (no prices are published; every project is a fixed fee quoted in writing after a free 20-minute ops call)",
+    ...offers.map((o) => `- ${o.name}: ${o.cadence}. ${o.body}`),
   );
 
   out.push("\n# FAQ", ...faqs.map((f) => `Q: ${f.q}\nA: ${f.a}`));
 
-  out.push("\n# Method (page: /method), five phases", ...phases.map((p) => `- ${p.name} (${p.time}): ${p.body}`));
+  out.push("\n# Method (page: /method), five phases", ...phases.map((p) => `- ${p.name}: ${p.body}`));
 
   out.push(
     "\n# AI Hub pillars (page: /hub)",

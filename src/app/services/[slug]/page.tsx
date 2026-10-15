@@ -9,7 +9,7 @@ import { getBlueprints } from "@/lib/content";
 import { serviceBySlug, services } from "@/lib/taxonomy";
 
 export function generateStaticParams() {
-  return services.map((s) => ({ slug: s.slug }));
+  return services.filter((s) => s.slug !== "foundations").map((s) => ({ slug: s.slug }));
 }
 
 export async function generateMetadata(props: PageProps<"/services/[slug]">): Promise<Metadata> {

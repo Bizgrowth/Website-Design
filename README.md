@@ -40,7 +40,7 @@ Copy an existing file in the same folder and change the top section (between the
 ## Where things live
 
 - `src/lib/site.ts`: brand name, booking link, and navigation
-- `src/lib/taxonomy.ts`: the three hub pillars and five services
+- `src/lib/taxonomy.ts`: the three hub pillars and six services
 - `src/lib/track-record.ts`: verified executive results
 - `src/app/`: pages
 - `src/components/`: shared UI

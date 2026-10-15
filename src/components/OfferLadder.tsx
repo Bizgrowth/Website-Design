@@ -5,27 +5,21 @@ import { ButtonLink } from "./ui";
 
 export function OfferLadder() {
   return (
-    <div className="grid gap-4 lg:grid-cols-3">
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {offers.map((o, i) => (
         <Reveal key={o.name} delay={i * 0.1} className="h-full">
           <div
-            className={`flex h-full flex-col rounded-2xl border p-7 ${
+            className={`flex h-full flex-col rounded-2xl border p-6 ${
               o.featured ? "border-accent bg-accent-soft shadow-lg" : "border-line bg-surface"
             }`}
           >
             <p className="text-xs font-semibold uppercase tracking-wider text-faint">Step {i + 1}</p>
             <h3 className="mt-2 text-xl font-semibold">{o.name}</h3>
-            <p className="mt-4 text-3xl font-bold">{o.price}</p>
-            <p className="text-sm text-muted">{o.cadence}</p>
-            <p className="mt-4 text-sm">{o.body}</p>
-            <ul className="mt-5 flex-1 space-y-2 text-sm">
-              {o.points.map((p) => (
-                <li key={p} className="flex gap-2"><span className="text-ok">✓</span>{p}</li>
-              ))}
-            </ul>
+            <p className="mt-2 text-sm font-medium text-accent">{o.cadence}</p>
+            <p className="mt-4 flex-1 text-sm">{o.body}</p>
             <div className="mt-6">
               <ButtonLink href={site.bookingUrl} variant={o.featured ? "primary" : "secondary"}>
-                Book an Ops Call
+                Book a 20-minute ops call
               </ButtonLink>
             </div>
           </div>

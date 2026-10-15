@@ -6,25 +6,22 @@ import { useState } from "react";
 const stages = [
   {
     tier: "Red",
-    name: "Human decides",
-    body: "AI researches and drafts. A person makes every decision. Every new workflow starts here, and so does anything touching money, legal exposure, or an upset customer.",
-    proof: "Exit when: a labeled test set exists and accuracy is known.",
+    name: "You decide",
+    body: "AI researches and drafts. A person makes every call. Every new workflow starts here, along with anything involving money, legal risk, or an unhappy customer.",
     color: "bg-risk",
     text: "text-risk",
   },
   {
     tier: "Yellow",
-    name: "Human approves",
-    body: "AI acts, but a person reviews before anything reaches a customer. Low-confidence work goes to its own queue.",
-    proof: "Track: accuracy, share approved without edits, escalation rate.",
+    name: "You approve",
+    body: "AI does the work, and a person reviews it before a customer sees anything. Anything the AI is unsure about goes to a separate queue.",
     color: "bg-warn",
     text: "text-warn",
   },
   {
     tier: "Green",
-    name: "AI runs, people audit",
-    body: "Promoted one task type at a time, only after it holds its pass rate. A fixed sample is still reviewed every month.",
-    proof: "Demotion is allowed: if accuracy drops, it goes back to Yellow.",
+    name: "AI runs, you spot-check",
+    body: "A task moves here only after it hits an agreed accuracy rate on your real work. A sample is still reviewed every month. If accuracy slips, it goes back to Yellow.",
     color: "bg-ok",
     text: "text-ok",
   },
@@ -59,7 +56,6 @@ export function AutonomyScroller() {
           >
             {stages[active].tier}: {stages[active].name}
           </motion.p>
-          <p className="mt-2 text-sm text-muted">Autonomy is earned with data. It&apos;s never assumed.</p>
         </div>
       </div>
 
@@ -84,7 +80,6 @@ export function AutonomyScroller() {
             </span>
             <h3 className="mt-2 text-2xl font-semibold">{s.name}</h3>
             <p className="mt-3 max-w-xl text-muted">{s.body}</p>
-            <p className="mt-4 text-sm font-medium">{s.proof}</p>
           </motion.li>
         ))}
       </ol>

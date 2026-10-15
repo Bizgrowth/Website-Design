@@ -47,7 +47,7 @@ export type Service = {
   pillars: PillarSlug[];
 };
 
-// Daniel's five service areas.
+// Daniel's six service areas. "foundations" has its own page at /services/foundations.
 export const services: Service[] = [
   {
     slug: "ai-readiness",
@@ -60,6 +60,23 @@ export const services: Service[] = [
       "Workflow opportunity map ranked by impact, risk, and effort",
       "Baseline report: cycle time, cost per unit, error rate",
       "90-day implementation roadmap",
+    ],
+    pillars: ["implementation"],
+  },
+  {
+    slug: "foundations",
+    name: "Process Documentation & Data Cleanup",
+    outcome: "Get your operation ready for AI.",
+    summary:
+      "Written SOPs, mapped workflows, and clean records your team and your AI can rely on. Delivered as the Foundations Sprint.",
+    deliverables: [
+      "A workflow map for each process",
+      "A written SOP for each process",
+      "Cleaned, deduplicated data in your existing tools, with a log of every change",
+      "A data dictionary naming the source of truth for each key field",
+      "Written data entry rules your team can follow",
+      "Before numbers: time per task, weekly volume, and error rate",
+      "An automation readiness score with your top three opportunities ranked",
     ],
     pillars: ["implementation"],
   },

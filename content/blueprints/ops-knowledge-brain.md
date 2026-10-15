@@ -1,6 +1,7 @@
 ---
 title: Ops Knowledge Brain (Cited Answers from Your SOPs)
 summary: Staff ask questions in plain English and get answers drawn only from your policies and SOPs — with the source document and page cited under every answer.
+cardLine: "Answers staff questions straight from your SOPs and shows which document it used."
 order: 2
 industry: Cross-industry
 pillars: [automation, integration]

@@ -30,7 +30,7 @@ export function MobileCtaBar() {
         >
           <div className="flex items-center gap-3 rounded-2xl border border-line bg-bg/90 p-2 pl-4 shadow-2xl backdrop-blur-xl">
             <p className="min-w-0 flex-1 text-xs leading-tight text-muted">
-              <span className="block font-semibold text-ink">30-minute ops call</span>
+              <span className="block font-semibold text-ink">20-minute ops call</span>
               Free · no pitch deck
             </p>
             <a href={site.bookingUrl} className="btn-flare inline-flex min-h-11 items-center rounded-xl px-4 text-sm font-semibold">

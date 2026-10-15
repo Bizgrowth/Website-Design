@@ -3,10 +3,10 @@ export const site = {
   shortName: "AI Ops Expert",
   domain: "aiopsexpert.com",
   url: "https://aiopsexpert.com",
-  tagline: "The SMB hub for AI automation, integration, and implementation.",
-  slogan: "Operation Intelligence, AI Powered",
+  tagline: "AI operations consulting for owner-led businesses. Fix the operation, then automate it.",
+  slogan: "Operations first. AI second.",
   description:
-    "Blueprints, daily SMB AI updates, and governed AI operations from an operator who scaled a company from $0 to $265M.",
+    "AI only works on operations that work. Former COO Daniel Schley documents your workflows, cleans your data, then automates what's ready. Take the free readiness check.",
   owner: "Daniel Schley",
   appsUrl: "https://apps.aiopsexpert.com",
   bookingUrl: "https://calendly.com/dschley-aiopsexpert/30min",

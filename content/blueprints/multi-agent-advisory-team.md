@@ -1,6 +1,7 @@
 ---
 title: Multi-Agent Operations Advisory Team
 summary: Four specialized agents — research, strategy, marketing, and operations — work in sequence on a business challenge and hand back an executive brief with a 30-day plan.
+cardLine: "Turns a business question into an executive brief with a 30-day plan."
 order: 6
 industry: Cross-industry
 pillars: [automation, implementation]

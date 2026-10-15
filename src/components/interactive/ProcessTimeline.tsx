@@ -3,7 +3,7 @@
 import { motion, useScroll } from "motion/react";
 import { useRef } from "react";
 
-export type Phase = { name: string; time: string; body: string };
+export type Phase = { name: string; time?: string; body: string };
 
 // Vertical timeline whose line draws itself as the reader scrolls.
 export function ProcessTimeline({ phases }: { phases: Phase[] }) {
@@ -33,7 +33,7 @@ export function ProcessTimeline({ phases }: { phases: Phase[] }) {
           <div className="rounded-2xl border border-line bg-surface p-5">
             <div className="flex flex-wrap items-baseline gap-x-3">
               <h3 className="text-lg font-semibold">{p.name}</h3>
-              <span className="text-xs font-medium text-faint">{p.time}</span>
+              {p.time && <span className="text-xs font-medium text-faint">{p.time}</span>}
             </div>
             <p className="mt-1 text-sm text-muted">{p.body}</p>
           </div>

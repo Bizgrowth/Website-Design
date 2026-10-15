@@ -1,6 +1,7 @@
 ---
 title: SOP-Driven Task Drafts
 summary: A task board that shows the written procedure next to each task and drafts a first pass from the two, so your team starts from a draft that follows your own process.
+cardLine: "Drafts the first pass of each task from your own written procedure."
 order: 9
 industry: Cross-industry
 pillars: [automation, implementation]

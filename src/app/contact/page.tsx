@@ -9,7 +9,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Book a 30-minute operations call with Daniel Schley, or send a message.",
+  description: "Book a 20-minute ops call with Daniel Schley, or send a message.",
 };
 
 export default function ContactPage() {
@@ -17,7 +17,7 @@ export default function ContactPage() {
     <PageTransition>
       <PageHeader
         eyebrow="Contact"
-        title="Book a 30-minute operations call"
+        title="Book a 20-minute ops call"
         lead="Bring one workflow that eats your team's time. We'll look at whether AI is the right fix and what it would take. Prefer to write? Use the message form below the calendar."
       />
       <Container className="grid gap-6 py-10 sm:py-14 lg:grid-cols-[300px_1fr] lg:gap-8">
