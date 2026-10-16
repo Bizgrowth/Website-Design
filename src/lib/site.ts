@@ -2,7 +2,8 @@ export const site = {
   name: "AI Operations Expert",
   shortName: "AI Ops Expert",
   domain: "aiopsexpert.com",
-  url: "https://aiopsexpert.com",
+  // The www address is the live one: aiopsexpert.com redirects to it. Keep the two in sync.
+  url: "https://www.aiopsexpert.com",
   tagline: "AI operations consulting for owner-led businesses. Fix the operation, then automate it.",
   slogan: "Operations first. AI second.",
   description:
