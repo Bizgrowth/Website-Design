@@ -40,7 +40,10 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description: site.description,
+  // "./" makes every page declare its own address as the preferred (canonical) one.
+  alternates: { canonical: "./" },
   openGraph: { siteName: site.name, type: "website" },
+  twitter: { card: "summary_large_image" },
 };
 
 export const viewport: Viewport = {
