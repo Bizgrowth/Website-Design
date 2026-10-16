@@ -54,7 +54,7 @@ export async function POST(req: Request) {
       "",
       "Thanks for your message. It reached me, and I will reply within one business day.",
       "",
-      "If it is urgent, the fastest route is to book a 30-minute call:",
+      "If it is urgent, the fastest route is to book a 20-minute ops call:",
       site.bookingUrl,
       "",
       "A copy of what you sent:",
@@ -63,7 +63,7 @@ export async function POST(req: Request) {
       site.owner,
       site.name,
     ].join("\n"),
-    html: `<div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.5;color:#111;max-width:560px"><p>Hi ${escapeHtml(first)},</p><p>Thanks for your message. It reached me, and I will reply within one business day.</p><p>If it is urgent, the fastest route is to <a href="${escapeHtml(site.bookingUrl)}">book a 30-minute call</a>.</p><p style="color:#555;margin-top:20px">A copy of what you sent:</p><blockquote style="margin:4px 0;padding-left:12px;border-left:3px solid #ccc;white-space:pre-wrap">${escapeHtml(message)}</blockquote><p style="margin-top:24px">${escapeHtml(site.owner)}<br>${escapeHtml(site.name)}</p></div>`,
+    html: `<div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.5;color:#111;max-width:560px"><p>Hi ${escapeHtml(first)},</p><p>Thanks for your message. It reached me, and I will reply within one business day.</p><p>If it is urgent, the fastest route is to <a href="${escapeHtml(site.bookingUrl)}">book a 20-minute ops call</a>.</p><p style="color:#555;margin-top:20px">A copy of what you sent:</p><blockquote style="margin:4px 0;padding-left:12px;border-left:3px solid #ccc;white-space:pre-wrap">${escapeHtml(message)}</blockquote><p style="margin-top:24px">${escapeHtml(site.owner)}<br>${escapeHtml(site.name)}</p></div>`,
   });
   return Response.json({ ok: true });
 }

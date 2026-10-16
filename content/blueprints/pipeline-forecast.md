@@ -1,6 +1,7 @@
 ---
 title: Sales Pipeline and Forecast Board
 summary: Every open deal on one board by stage, with live totals and a forecast weighted by stage win rates, so you see what is likely to close without maintaining a spreadsheet.
+cardLine: "Shows every open deal and a weighted forecast without a hand-kept spreadsheet."
 order: 7
 industry: Professional services
 pillars: [integration, implementation]

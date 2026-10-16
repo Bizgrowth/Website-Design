@@ -1,6 +1,7 @@
 ---
 title: Document Intake Extractor (Invoices, Leases, Contracts)
 summary: Uploaded invoices, leases, and contracts are parsed into structured fields with a confidence score on each one, then written to your tracker — low-confidence fields flagged for a person.
+cardLine: "Reads invoices, leases, and contracts and enters the details, flagging anything it's unsure about."
 order: 3
 industry: Property management & finance
 pillars: [automation, integration]

@@ -80,7 +80,7 @@ export default function AssessmentPage() {
         <SectionHeading
           eyebrow="The full assessment"
           title="What you get from the AI Ops Diagnostic"
-          lead={`${diagnostic.cadence.replace(" · ", ", ")}. ${diagnostic.price}. The self-check gives you a direction. The diagnostic gives you a plan.`}
+          lead={`${diagnostic.cadence}, quoted after your call. The self-check gives you a direction. The diagnostic gives you a plan.`}
         />
         <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {deliverables.map((d) => (
@@ -93,7 +93,7 @@ export default function AssessmentPage() {
       </Container>
 
       <CtaBand
-        title="Get the AI Readiness Assessment for your business."
+        title="Talk through your results on a 20-minute ops call."
         lead="A 20-minute operations call. We look at where your team's hours go, what's written down, and whether AI is the right fix yet."
       />
     </PageTransition>

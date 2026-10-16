@@ -1,6 +1,7 @@
 ---
 title: AI Ops KPI Dashboard with Weekly Narrative
 summary: A live dashboard of your core operating numbers, plus a plain-English weekly brief that explains what moved, flags risks, and recommends three actions.
+cardLine: "Puts your key numbers on one screen and writes a plain-English summary each week."
 order: 5
 industry: Cross-industry
 pillars: [integration, implementation]

@@ -1,6 +1,7 @@
 ---
 title: Staged Client Onboarding Checklist
 summary: A step-by-step onboarding flow where finishing one stage unlocks the next, every step has one owner, and progress is visible to your team and the client.
+cardLine: "Keeps every new client's onboarding on track so steps don't get skipped or asked for twice."
 order: 8
 industry: Professional services
 pillars: [automation, implementation]

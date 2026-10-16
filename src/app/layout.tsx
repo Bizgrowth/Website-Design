@@ -36,7 +36,7 @@ const fragmentMono = Fragment_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — AI Automation, Integration & Implementation for SMBs`,
+    default: "AI Operations Consulting for SMBs | Fix the Operation, Then Automate It",
     template: `%s | ${site.name}`,
   },
   description: site.description,

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Morph } from "@/components/PageTransition";
 import { useRef, type PointerEvent } from "react";
 
-export type RailItem = { slug: string; title: string; summary: string; industry: string; stack: string[] };
+export type RailItem = { slug: string; title: string; summary: string; industry: string; cardLine: string };
 
 // Horizontal, snap-scrolling rail of blueprints. Works with touch, trackpad,
 // the arrow buttons, and click-and-drag with a mouse.
@@ -72,7 +72,7 @@ export function BlueprintRail({ items }: { items: RailItem[] }) {
               <h3 className="mt-1 text-xl font-semibold">{b.title}</h3>
             </Morph>
             <p className="mt-3 flex-1 text-sm text-muted">{b.summary}</p>
-            <p className="mt-6 font-mono text-xs text-faint">{b.stack.join(" · ")}</p>
+            <p className="mt-6 text-sm font-medium">{b.cardLine}</p>
             <span className="mt-4 text-sm font-semibold text-accent transition group-hover:translate-x-1">
               See the architecture →
             </span>

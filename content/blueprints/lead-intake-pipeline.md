@@ -1,6 +1,7 @@
 ---
 title: 60-Second Lead Intake Pipeline
 summary: A web inquiry is captured, researched, scored, logged in HubSpot, answered with a personalized first reply, and announced to your team in Slack — in under a minute.
+cardLine: "Answers new web inquiries in under a minute and logs them in your CRM."
 order: 4
 industry: Professional services
 pillars: [automation, integration]

@@ -98,7 +98,7 @@ export function HeroWorkflow() {
       </ul>
 
       <p className="mt-4 text-[11px] text-white/40">
-        Simulated run of the Email Triage blueprint · nothing sends without approval
+        Sample run on test data. Every reply waits for staff approval.
       </p>
     </div>
   );

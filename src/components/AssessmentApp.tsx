@@ -415,7 +415,7 @@ function Results({
             The AI Ops Diagnostic takes your top three workflows, sets a baseline, and gives you a 90-day plan. It&apos;s a two-week fixed-scope project, and the best way to turn this score into action.
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
-            <ButtonLink href={site.bookingUrl}>Book an Ops Call</ButtonLink>
+            <ButtonLink href={site.bookingUrl}>Book a 20-minute ops call</ButtonLink>
             <ButtonLink href="/contact" variant="secondary">
               Send a message
             </ButtonLink>

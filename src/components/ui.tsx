@@ -43,7 +43,7 @@ export function SectionHeading({
   );
 }
 
-export function PageHeader({ eyebrow, title, lead }: { eyebrow: string; title: string; lead?: string }) {
+export function PageHeader({ eyebrow, title, lead, children }: { eyebrow: string; title: string; lead?: string; children?: ReactNode }) {
   return (
     <header className="relative isolate border-b border-line">
       <div className="absolute inset-x-0 -top-28 bottom-0 -z-10 [mask-image:linear-gradient(to_bottom,black_60%,transparent)]">
@@ -53,6 +53,7 @@ export function PageHeader({ eyebrow, title, lead }: { eyebrow: string; title: s
         <Eyebrow>{eyebrow}</Eyebrow>
         <h1 className="mt-5 max-w-3xl text-4xl font-medium sm:text-5xl">{title}</h1>
         {lead && <p className="mt-4 max-w-2xl text-lg text-muted">{lead}</p>}
+        {children}
       </Container>
     </header>
   );

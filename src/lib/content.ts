@@ -19,6 +19,7 @@ type BaseEntry = {
 export type Blueprint = BaseEntry & {
   kind: "blueprint";
   industry: string;
+  cardLine: string;
   stack: string[];
   governance: string[];
   measures: string[];
@@ -73,6 +74,7 @@ export function getBlueprints(): Blueprint[] {
       summary: data.summary,
       pillars: data.pillars ?? [],
       industry: data.industry ?? "Cross-industry",
+      cardLine: data.cardLine ?? "",
       stack: data.stack ?? [],
       governance: data.governance ?? [],
       measures: data.measures ?? [],

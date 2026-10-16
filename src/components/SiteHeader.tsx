@@ -66,7 +66,7 @@ export function SiteHeader() {
             <span className="hidden truncate min-[1180px]:inline">{site.name}</span>
           </Link>
 
-          <nav aria-label="Main" className="hidden flex-1 items-center gap-0.5 min-[900px]:flex">
+          <nav aria-label="Main" className="hidden flex-1 items-center gap-0.5 min-[1024px]:flex">
             {nav.map((item) => (
               <Link
                 key={item.href}
@@ -82,7 +82,7 @@ export function SiteHeader() {
           </nav>
 
           <div className="ml-auto hidden sm:block">
-            <ButtonLink href={site.bookingUrl}>Book an Ops Call</ButtonLink>
+            <ButtonLink href={site.bookingUrl}>Book a 20-minute ops call</ButtonLink>
           </div>
 
           {/* Hamburger that morphs into an X */}
@@ -92,7 +92,7 @@ export function SiteHeader() {
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
-            className="relative ml-auto grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-line bg-surface-2 sm:ml-0 min-[900px]:hidden"
+            className="relative ml-auto grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-line bg-surface-2 sm:ml-0 min-[1024px]:hidden"
           >
             {[-6, 0, 6].map((offset, i) => (
               <motion.span
@@ -120,7 +120,7 @@ export function SiteHeader() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-40 overflow-y-auto bg-bg/95 px-6 pb-[max(2rem,env(safe-area-inset-bottom))] pt-28 backdrop-blur-xl min-[900px]:hidden"
+            className="fixed inset-0 z-40 overflow-y-auto bg-bg/95 px-6 pb-[max(2rem,env(safe-area-inset-bottom))] pt-28 backdrop-blur-xl min-[1024px]:hidden"
           >
             <nav aria-label="Mobile" className="mx-auto max-w-md">
               <ul className="space-y-1">
@@ -143,7 +143,7 @@ export function SiteHeader() {
                 ))}
               </ul>
               <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.45 }} className="mt-8">
-                <ButtonLink href={site.bookingUrl}>Book an Ops Call</ButtonLink>
+                <ButtonLink href={site.bookingUrl}>Book a 20-minute ops call</ButtonLink>
               </motion.div>
             </nav>
           </motion.div>

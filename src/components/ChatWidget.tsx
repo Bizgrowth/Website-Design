@@ -107,7 +107,7 @@ export function ChatWidget() {
         setNotice(
           res.status === 429
             ? "You're asking quickly. Please wait a few minutes and try again."
-            : `The chat assistant is offline right now. Book an Ops Call or email ${site.email}.`,
+            : `The chat assistant is offline right now. Book a 20-minute ops call or email ${site.email}.`,
         );
         return;
       }
@@ -238,7 +238,7 @@ export function ChatWidget() {
             <p className="mt-2 text-[11px] leading-snug text-faint">
               AI-generated answers can be wrong. Messages are processed by an AI service. If you share contact details, they&apos;re emailed to {site.owner}. See our{" "}
               <Link className="underline" href="/privacy">Privacy Policy</Link>. Prefer to talk?{" "}
-              <a className="underline" href={site.bookingUrl} target="_blank" rel="noopener noreferrer">Book an Ops Call</a>.
+              <a className="underline" href={site.bookingUrl} target="_blank" rel="noopener noreferrer">Book a 20-minute ops call</a>.
             </p>
           </form>
         </div>
