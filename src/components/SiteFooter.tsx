@@ -26,6 +26,7 @@ export function SiteFooter() {
           title="Company"
           links={[
             { href: "/track-record", label: "Track Record" },
+            { href: "/how-it-works", label: "How an Engagement Works" },
             { href: "/method", label: "Earned Autonomy Method" },
             { href: "/about", label: "About Daniel" },
             { href: "/contact", label: "Contact" },
