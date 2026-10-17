@@ -24,6 +24,7 @@ const steps = [
       "90-day roadmap ranked by impact, risk, and effort",
     ],
     walkAway: "a written plan you can run with me, with someone else, or on your own.",
+    keep: "A signed confidentiality agreement, readiness scorecard, gap list, 90-day roadmap, and a written scope with a fixed fee.",
   },
   {
     name: "Foundations Sprint",
@@ -38,6 +39,7 @@ const steps = [
     ],
     walkAway:
       "documentation your team can train from tomorrow, plus processes ready for automation. Just the act of centralizing your data immediately improves decision-making and efficiency.",
+    keep: "Workflow maps, written SOPs, cleaned data with a log of every change, a data dictionary, before numbers, and a readiness score.",
     bestFor:
       "businesses where the process lives in one or two people's heads, or where the same customer shows up three ways in three systems.",
     href: "/services/foundations",
@@ -55,6 +57,7 @@ const steps = [
       "Handoff training and a plain-English runbook",
     ],
     walkAway: "a working, measured workflow your team can maintain.",
+    keep: "A plain-English Build Summary, a runbook your team can follow, the test results, and a governance checklist.",
   },
   {
     name: "AI Ops Oversight",
@@ -67,6 +70,7 @@ const steps = [
       "One new workflow each quarter",
     ],
     walkAway: "AI that keeps working after launch, and a monthly report showing it.",
+    keep: "A monthly report on accuracy, exceptions, and cost.",
   },
 ];
 
@@ -135,6 +139,11 @@ export default function ServicesPage() {
         <p className="-mt-2 mb-8 max-w-2xl text-sm font-medium">
           Every step is a fixed fee, quoted in writing after a 30-minute call and sized to your business. You know the full cost before anything starts.
         </p>
+        <p className="-mt-4 mb-8">
+          <Link href="/how-it-works" className="inline-flex min-h-11 items-center text-sm font-semibold text-accent">
+            See exactly how an engagement works →
+          </Link>
+        </p>
         <ol className="grid gap-4 md:grid-cols-2">
           {steps.map((s, i) => (
             <li key={s.name} className="flex flex-col rounded-2xl border border-line bg-surface p-6">
@@ -148,6 +157,7 @@ export default function ServicesPage() {
                 ))}
               </ul>
               <p className="mt-4 text-sm"><em>You walk away with:</em> {s.walkAway}</p>
+              <p className="mt-2 text-sm"><em>Documents you keep:</em> {s.keep}</p>
               {s.bestFor && <p className="mt-2 text-sm"><em>Best for:</em> {s.bestFor}</p>}
               {s.href && (
                 <Link href={s.href} className="mt-3 inline-flex min-h-11 items-center text-sm font-semibold text-accent">
