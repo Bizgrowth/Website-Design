@@ -77,6 +77,12 @@ const explore = [
     body: "Guides on automation, integration, and implementation, organized by the problem you're solving.",
     link: "Browse the Hub",
   },
+  {
+    href: "/hub/integration",
+    title: "Tool Stack",
+    body: "Pick a tool to see what I automate with it and which blueprints use it.",
+    link: "Explore the tool stack",
+  },
 ];
 
 export default function Home() {
@@ -270,7 +276,7 @@ export default function Home() {
           <Reveal>
             <h2 className="mb-8 text-3xl font-medium sm:text-4xl">Keep learning</h2>
           </Reveal>
-          <Stagger className="grid gap-4 md:grid-cols-3">
+          <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {explore.map((e) => (
               <Card key={e.href} href={e.href} className="h-full">
                 <h3 className="text-xl font-semibold">{e.title}</h3>
