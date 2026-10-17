@@ -121,7 +121,7 @@ Every build includes the governance kit: approval matrix, labeled eval set, fail
 /resources                  Lead magnets: approval matrix, eval-set template, AI use policy
 ```
 
-Design principles: system diagrams, not robots. Show sample deliverables. No animated counters. One primary CTA ("Book a 20-min Operations Call").
+Design principles: system diagrams, not robots. Show sample deliverables. No animated counters. One primary CTA ("Book a 30-min Operations Call").
 
 **Fix now on the live site:** remove unverifiable stats and testimonials; fix "Most A|", the 0% counters, "Top -18", "-120%", the back links, and the duplicate logo marquee; unify the brand, domain, and email.
 

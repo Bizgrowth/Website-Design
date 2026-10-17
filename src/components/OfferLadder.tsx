@@ -19,7 +19,7 @@ export function OfferLadder() {
             <p className="mt-4 flex-1 text-sm">{o.body}</p>
             <div className="mt-6">
               <ButtonLink href={site.bookingUrl} variant={o.featured ? "primary" : "secondary"}>
-                Book a 20-minute ops call
+                Book a 30-minute ops call
               </ButtonLink>
             </div>
           </div>

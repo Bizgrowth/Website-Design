@@ -8,7 +8,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: { absolute: "AI Services for SMBs: Diagnostic, Foundations, Build, Oversight | AI Ops Expert" },
   description:
-    "Four steps to AI that sticks: find what to automate, document and clean up the foundations, build with controls, and keep it accurate. Fixed-fee projects, quoted after a free 20-minute call.",
+    "Four steps to AI that sticks: find what to automate, document and clean up the foundations, build with controls, and keep it accurate. Fixed-fee projects, quoted after a free 30-minute call.",
 };
 
 const steps = [
@@ -120,7 +120,7 @@ export default function ServicesPage() {
         lead="Every engagement follows the same four steps. We find what's worth automating, fix the foundations it depends on, build it with controls, and keep it accurate. You can stop after any step and keep everything we've built."
       >
         <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
-          <ButtonLink href={site.bookingUrl}>Book a 20-minute ops call</ButtonLink>
+          <ButtonLink href={site.bookingUrl}>Book a 30-minute ops call</ButtonLink>
           <Link href="/assessment" className="inline-flex min-h-11 items-center text-sm font-semibold text-accent">
             Not sure you&apos;re ready? Take the 2-minute readiness check
           </Link>
@@ -133,7 +133,7 @@ export default function ServicesPage() {
           lead="Skipping a step is how AI projects stall. Each step produces something you own, whether or not you continue."
         />
         <p className="-mt-2 mb-8 max-w-2xl text-sm font-medium">
-          Every step is a fixed fee, quoted in writing after a 20-minute call and sized to your business. You know the full cost before anything starts.
+          Every step is a fixed fee, quoted in writing after a 30-minute call and sized to your business. You know the full cost before anything starts.
         </p>
         <ol className="grid gap-4 md:grid-cols-2">
           {steps.map((s, i) => (
@@ -202,7 +202,7 @@ export default function ServicesPage() {
       </Container>
 
       <CtaBand
-        lead="A 20-minute operations call. We look at where your team's hours go, what's written down, and which step makes sense. If AI isn't the right fix yet, I'll tell you."
+        lead="A 30-minute operations call. We look at where your team's hours go, what's written down, and which step makes sense. If AI isn't the right fix yet, I'll tell you."
         secondary={{ href: "/assessment", label: "Or take the 2-minute readiness check first" }}
       />
     </PageTransition>

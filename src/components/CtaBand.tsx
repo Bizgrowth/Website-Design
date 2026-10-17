@@ -6,7 +6,7 @@ import { ButtonLink, Container } from "./ui";
 
 export function CtaBand({
   title = "Find out what's ready to automate and what needs fixing first.",
-  lead = "A 20-minute operations call. We look at where your team's hours go, what's written down, and whether AI is the right fix yet. If it isn't, I'll tell you what to do first.",
+  lead = "A 30-minute operations call. We look at where your team's hours go, what's written down, and whether AI is the right fix yet. If it isn't, I'll tell you what to do first.",
   secondary,
 }: {
   title?: string;
@@ -24,7 +24,7 @@ export function CtaBand({
           <p className="mt-3 text-muted">{lead}</p>
         </div>
         <div className="relative flex flex-col items-start gap-3 md:items-end">
-          <ButtonLink href={site.bookingUrl}>Book a 20-minute ops call</ButtonLink>
+          <ButtonLink href={site.bookingUrl}>Book a 30-minute ops call</ButtonLink>
           {secondary && (
             <Link href={secondary.href} className="inline-flex min-h-11 items-center text-sm font-semibold text-accent">
               {secondary.label}
