@@ -20,6 +20,10 @@ export const site = {
     "I spent twenty years building and running operating companies — from a $0 to $265M healthcare network to a $1B real estate platform. Now I help owner-led businesses put AI to work the same way I ran operations: with clear owners, measured results, and controls that keep it from breaking.",
   socials: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/danielschley" },
+    { label: "X", href: "https://x.com/AIOpsExpert" },
+    { label: "Facebook", href: "https://www.facebook.com/AiOpsExpert/" },
+    { label: "Instagram", href: "https://www.instagram.com/aiopsexpert/" },
+    { label: "YouTube", href: "https://www.youtube.com/@AIOPSEXPERT" },
     { label: "danielschley.com", href: "https://danielschley.com" },
     { label: "GitHub", href: "https://github.com/Bizgrowth" },
   ],
