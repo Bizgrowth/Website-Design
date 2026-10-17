@@ -82,7 +82,7 @@ export function SiteHeader() {
           </nav>
 
           <div className="ml-auto hidden sm:block">
-            <ButtonLink href={site.bookingUrl}>Book a 20-minute ops call</ButtonLink>
+            <ButtonLink href={site.bookingUrl}>Book a 30-minute ops call</ButtonLink>
           </div>
 
           {/* Hamburger that morphs into an X */}
@@ -143,7 +143,7 @@ export function SiteHeader() {
                 ))}
               </ul>
               <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.45 }} className="mt-8">
-                <ButtonLink href={site.bookingUrl}>Book a 20-minute ops call</ButtonLink>
+                <ButtonLink href={site.bookingUrl}>Book a 30-minute ops call</ButtonLink>
               </motion.div>
             </nav>
           </motion.div>

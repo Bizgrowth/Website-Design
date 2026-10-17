@@ -118,7 +118,7 @@ export default function Home() {
                   </p>
                   <div className="mt-8 flex flex-wrap gap-3">
                     <ButtonLink href="/assessment">Take the 2-minute readiness check</ButtonLink>
-                    <ButtonLink href={site.bookingUrl} variant="secondary">Book a 20-minute ops call</ButtonLink>
+                    <ButtonLink href={site.bookingUrl} variant="secondary">Book a 30-minute ops call</ButtonLink>
                   </div>
                   <p className="mt-6 max-w-xl text-sm text-white/60">
                     Twenty years as a COO and operating executive, including helping scale a healthcare network from $0 to $265M.
@@ -207,7 +207,7 @@ export default function Home() {
               action={<ButtonLink href="/services" variant="secondary">All services →</ButtonLink>}
             />
             <p className="-mt-2 mb-8 max-w-2xl text-sm font-medium">
-              Every project is a fixed fee, quoted in writing after a 20-minute call. You know the full cost before anything starts.
+              Every project is a fixed fee, quoted in writing after a 30-minute call. You know the full cost before anything starts.
             </p>
           </Reveal>
           <OfferLadder />

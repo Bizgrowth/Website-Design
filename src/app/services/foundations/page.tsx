@@ -74,7 +74,7 @@ export default function FoundationsPage() {
         lead="Just the act of centralizing your data immediately improves decision-making and efficiency. The Foundations Sprint cleans up your data and writes down how your work gets done, so your team works better now and automation works later."
       >
         <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
-          <ButtonLink href={site.bookingUrl}>Book a 20-minute ops call</ButtonLink>
+          <ButtonLink href={site.bookingUrl}>Book a 30-minute ops call</ButtonLink>
           <Link href="/assessment" className="inline-flex min-h-11 items-center text-sm font-semibold text-accent">
             Or take the 2-minute readiness check
           </Link>
@@ -176,7 +176,7 @@ export default function FoundationsPage() {
 
       <CtaBand
         title="Clean data and written processes, in as little as a week."
-        lead="A 20-minute operations call. We'll look at which process is costing your team the most time and what it would take to get it ready."
+        lead="A 30-minute operations call. We'll look at which process is costing your team the most time and what it would take to get it ready."
       />
     </PageTransition>
   );

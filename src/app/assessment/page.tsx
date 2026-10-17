@@ -93,8 +93,8 @@ export default function AssessmentPage() {
       </Container>
 
       <CtaBand
-        title="Talk through your results on a 20-minute ops call."
-        lead="A 20-minute operations call. We look at where your team's hours go, what's written down, and whether AI is the right fix yet."
+        title="Talk through your results on a 30-minute ops call."
+        lead="A 30-minute operations call. We look at where your team's hours go, what's written down, and whether AI is the right fix yet."
       />
     </PageTransition>
   );

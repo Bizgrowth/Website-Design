@@ -50,7 +50,7 @@ export function getKnowledgeBase(): string {
   );
 
   out.push(
-    "\n# Service steps and pricing (no prices are published; every project is a fixed fee quoted in writing after a free 20-minute ops call)",
+    "\n# Service steps and pricing (no prices are published; every project is a fixed fee quoted in writing after a free 30-minute ops call)",
     ...offers.map((o) => `- ${o.name}: ${o.cadence}. ${o.body}`),
   );
 

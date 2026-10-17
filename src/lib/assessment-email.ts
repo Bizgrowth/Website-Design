@@ -35,7 +35,7 @@ export function resultsEmail(name: string, result: AssessmentResult) {
       ? ["WHAT NEEDS A FIX FIRST", ...notYet.slice(0, 5).map((s) => `- ${s.build.name}: improve ${s.gaps.map((g) => g.name.toLowerCase()).join(", ")}`), ""]
       : []),
     "NEXT STEP",
-    `Reply to this email with questions, or book a 20-minute ops call: ${site.bookingUrl}`,
+    `Reply to this email with questions, or book a 30-minute ops call: ${site.bookingUrl}`,
     "",
     `${site.owner}`,
     `${site.name}`,
@@ -58,7 +58,7 @@ ${li(plan.map((p) => `<strong>${escapeHtml(p.week)}: ${escapeHtml(p.title)}.</st
 ${h("What you could automate today")}
 <p style="margin:4px 0">${ready.length ? escapeHtml(ready.join(", ")) : "Nothing yet. Fix the gaps above first so automation has something solid to work from."}</p>
 ${h("Next step")}
-<p style="margin:4px 0">Reply to this email with questions, or <a href="${escapeHtml(site.bookingUrl)}">book a 20-minute ops call</a>.</p>
+<p style="margin:4px 0">Reply to this email with questions, or <a href="${escapeHtml(site.bookingUrl)}">book a 30-minute ops call</a>.</p>
 <p style="margin-top:24px">${escapeHtml(site.owner)}<br>${escapeHtml(site.name)}<br><a href="${escapeHtml(site.url)}">${escapeHtml(site.domain)}</a></p>
 </div>`;
   return { text, html };

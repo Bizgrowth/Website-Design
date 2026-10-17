@@ -46,7 +46,7 @@ export default function AboutPage() {
           </p>
           <p>
             <Link href="/track-record">See the full track record</Link> or{" "}
-            <a href={site.bookingUrl}>book a 20-minute ops call</a>.
+            <a href={site.bookingUrl}>book a 30-minute ops call</a>.
           </p>
         </div>
         <dl className="grid grid-cols-2 gap-3 self-start">
