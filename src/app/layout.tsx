@@ -46,6 +46,36 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image" },
 };
 
+// Structured data (JSON-LD): tells Google who the business is and which profiles belong to it.
+// Only facts already shown on the site are used here.
+const brandProfiles = site.socials.filter((s) => "brand" in s && s.brand).map((s) => s.href);
+const personProfiles = site.socials.filter((s) => !("brand" in s && s.brand)).map((s) => s.href);
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${site.url}/#organization`,
+      name: site.name,
+      url: site.url,
+      logo: `${site.url}/brand/emblem.png`,
+      email: site.email,
+      telephone: site.phone,
+      founder: { "@id": `${site.url}/#daniel-schley` },
+      sameAs: brandProfiles,
+    },
+    {
+      "@type": "Person",
+      "@id": `${site.url}/#daniel-schley`,
+      name: site.owner,
+      jobTitle: "Founder",
+      worksFor: { "@id": `${site.url}/#organization` },
+      url: `${site.url}/about`,
+      sameAs: personProfiles,
+    },
+  ],
+};
+
 export const viewport: Viewport = {
   themeColor: "#000000",
   colorScheme: "dark",
@@ -60,6 +90,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <noscript>
           <style>{`[data-reveal]{opacity:1!important;transform:none!important}`}</style>
         </noscript>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
+        />
         <MotionProvider>
           <Atmosphere />
           <ScrollProgress />
